@@ -1,0 +1,75 @@
+.texto2{
+    margin-top: 15px;
+    
+}
+
+.texto3{
+    margin-top: 15px;
+    
+}
+
+.altura {
+    height: 30px;
+}
+
+.alturareto2 {
+    height: 20px;
+}
+
+.cmdnext{
+  background-color: green;
+  color: aliceblue;
+  margin-top: 50px;
+  margin-left: 15px;
+  width: 100px;
+  height: 40px;
+}
+
+.fieldsetreto01{
+    text-align:center;
+    width: 80px;
+}
+.fieldsetreto2{
+    margin-left: 30px;
+    width: 220px;
+    background-color: rgb(236, 229, 229);
+}
+
+.izq, h2, textarea, select,option {
+    margin-left:10px;
+    
+}
+
+.labelnegrita{
+ font-weight: bold;
+
+}
+.fieldsetreto3{
+    margin-left: 30px;
+    width: 250px;
+    background-color: rgb(178, 221, 238);
+}
+
+.textareareto3{    
+margin-left: 1px;
+    width: 250px;
+    height: 130px;
+}
+
+.cmdreto3{
+    background-color:cornflowerblue;
+    color: white;
+    margin-left: 80px;
+    height: 50px;
+    width: 100px;
+
+}
+
+.anchoinput{
+    width: 250px;
+}
+
+.h2reto3{
+margin-left: 50px;
+
+}

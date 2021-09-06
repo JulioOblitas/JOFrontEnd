@@ -1,0 +1,27 @@
+article, h1{
+text-decoration: underline;
+}
+article p{
+background-color: aqua;
+
+}
+ol > li{
+    color: red;
+
+}
+
+article > p{
+    color: blue;
+}
+#caja >span{
+    background-color: yellow;
+}
+/*seudoclases*/
+tr:nth-of-type(odd){
+    background-color: brown;
+
+}
+
+tr:nth-of-type(even){
+    background-color:greenyellow;
+}

@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reto 02 </title>
+     <link rel="stylesheet" href=".//estilos.css">
+</head>
+<body>
+     <form>
+
+        <fieldset class = "fieldsetreto2" >
+            <h2>SIGN UP</h2>
+
+            <label class = "izq labelnegrita">First Name</label>
+            <br>
+            
+            <input class = "izq alturareto2 " type="text"  minlength ="10" pattern="[A-Z]{1,10}" required>
+            <br>
+            <br>
+            <label class = "izq labelnegrita">Age</label>
+            <br>
+            <input class = "izq alturareto2" type="number" maxlength="3"  min = "1" max="120"   required>
+            <br>
+            <br>
+            <label class = "izq labelnegrita">Income</label>
+            <br>
+
+            <input class = "izq alturareto2" type="text" minlength ="6" required>
+            <br>
+            <br>
+
+            <label class = "izq labelnegrita">More Info</label>
+            <br>
+            <textarea  style=" width: 200px; "  ></textarea>
+            <br>
+            <br>
+            <label class = "izq labelnegrita">Gender</label>
+            <br>
+            <input class = "izq" type="radio"  name = "genero" value = "M"> Male
+            <input type="radio" name = "genero" value = "F"> Female
+            <input type="radio" name = "genero" value = "T" > Trans
+            <br>
+            <br>
+
+            <!--input type="radio" name  = "genero" value = "M" > Masculino*-->
+
+            
+
+            <label class = "izq labelnegrita" >Plan</label>
+            <br>
+            
+            <select name="" id="">
+
+                <option value="">SELECCIONE PLAN</option>
+                <option value="PLA1">PLAN 1</option>
+                <option value="PLA2">PLAN 2</option>
+            </select>
+            <br>    
+            <br>
+            <input class = "izq" type="checkbox">Suscribe to Newsletter 
+            <br>
+            <br>
+
+            <input type="submit"
+             style="background-color: rgb(0, 162, 255); 
+             color: white;
+             margin-left: 10px;
+             width: 80px;
+             " value = "Update" >
+
+        </fieldset>
+     </form>
+    
+</body>
+</html>

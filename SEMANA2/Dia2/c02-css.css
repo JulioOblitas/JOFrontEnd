@@ -1,0 +1,27 @@
+section{
+    background-color: aquamarine;
+}
+
+.rojo{
+    color: red;
+
+}
+.bordeazul{
+    border: 2px solid blue ;
+}
+
+.sub{
+    text-decoration: underline;
+}
+
+#importante{
+    font-family: 'Courier New';
+    background-color: peru;
+
+
+}
+.titulo1{
+font-family: sans-serif;
+text-decoration: underline;
+color: brown ;
+}

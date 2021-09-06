@@ -1,0 +1,89 @@
+body{
+    background-color:darkgrey;
+}
+
+
+header{
+    background-color: aquamarine;
+    height: 48px;
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+}
+
+.titseccion{
+    text-align: left;
+    margin-left: 10px;
+}
+
+
+ nav{
+    
+    /*float: left;*/
+
+    background-color:yellow;
+    height: 400px;
+    width: 25%;
+    margin: 0px;
+    
+    text-align: center;
+ }
+ article{
+     
+    
+    /*float: left;*/
+    background-color:chartreuse;    
+    width: 48%;
+    height: 400px;
+    margin-top: -420px;
+    margin-left: 26%;
+    text-align: center;
+ }
+
+
+ aside{
+    /*float: left;*/
+    background-color: orange;    
+    width: 25%;
+    height: 400px;    
+    margin-top: -420px;
+    margin-left: 75%;
+    text-align: center;
+ }
+
+ footer{
+     background-color:aquamarine;
+     height: 48px;
+     text-align: center;  
+    }
+    section{        
+        background-color: rgb(187, 127, 218);
+        margin-left: 13px;
+        width: 620px;
+        height: 100px;
+        border-style: none;
+            }
+  .footarticle{
+    background-color:chartreuse;    
+  }
+
+  .sectionaside{
+    position: static;
+    background-color:rgb(255, 81, 0);
+    margin-left: 13px;
+    width: 310px;
+    text-align: center;
+    margin-top: -15px;
+  }
+
+  .titseccionaside{
+    
+    margin-left: auto;
+    
+    margin-top: 30px;
+    
+    
+    
+    
+}
+
