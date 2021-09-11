@@ -1,0 +1,27 @@
+
+h1{
+color: rebeccapurple;
+width: 50%;
+border: 1px solid blue;
+}
+h2{
+
+    color: #405dfc;
+}
+
+h3{
+    color: rgb(0,130, 160);
+}
+
+p{
+    background-color: hsl(300, 50%, 70%)
+}
+
+* {
+    border: 1px solid red;
+}
+
+header{
+    width: 400px;
+    height: 200px;
+}

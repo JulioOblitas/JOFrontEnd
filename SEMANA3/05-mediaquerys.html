@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        h1{
+            background-color:blueviolet;
+                font-size: calc(14px + 3vw);
+
+                }
+
+                .titulares,  .noticia{
+                    border: 1px solid red;
+                }
+
+                .titulares{
+                    display: flex;
+                    justify-content: space-between;
+
+                }
+
+                .noticia{
+                    max-width: 200px;
+                }
+
+                header{
+
+                    width: 100vw;
+                    height:100vh;
+                }
+
+                /* es un hoja css aparte */
+                @media screen and (max-width:768px) {
+                    h1{
+                        background-color: aquamarine;
+                    }
+                    .titulares{
+                        border:1px solid blue;
+                         
+                    }
+                    
+                }
+
+                @media screen and (max-width:576px) {
+                    h1{
+                        background-color: orange;
+                                        }
+                    .titulares{
+                        color:blue;
+                        flex-direction: column;
+                    }
+                    .noticia{
+                        max-width: 100%;
+                    }
+
+    </style>
+
+</head>
+<body>
+    <header> 
+    <h1>Titulo</h1> 
+    </header>
+
+    <main>
+        <section class= "titulares">
+            <div class="noticia">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, recusandae.</p>
+            </div>
+            <div class="noticia">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, recusandae.</p>
+            </div>
+            <div class="noticia">
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, recusandae.</p>
+            </div>
+        </section>
+    </main>
+    
+</body>
+</html>

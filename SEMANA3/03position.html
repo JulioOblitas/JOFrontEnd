@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .papa{
+        width: 500px;
+        height: 1400px;
+        border: 1px solid green;
+        margin-top: 40px;
+        margin-left: 80px;
+        position: relative;
+        
+        }
+
+        .hijo{
+            width: 100px;
+            height: 100px;
+            margin: 5px;
+            border: 1px solid red;
+        }
+
+        .caja2{
+            background-color:palegreen;
+                        position: absolute;
+                        top: 40px;
+                        left: 50px;
+                        z-index: 10 ;
+        }
+
+        .caja4{
+            position: fixed;
+            bottom: 60px;
+            right: 30px;
+            background-color: aqua;
+        }
+        .caja1{
+
+            position: sticky;
+            top: 0;
+            z-index: 9 ;
+            background-color: rebeccapurple;
+            color: white;
+        }
+
+        .caja3{
+
+            position: absolute;
+            z-index: 29;
+        }
+    </style>
+</head>
+<body>
+    <section class="papa">
+        <div class="hijo caja1">cajita</div>
+        <div class="hijo caja2">cajita2</div>
+        <div class="hijo caja3">cajita</div>
+        <div class="hijo caja4">cajita</div>
+
+    </section>
+    
+</body>
+</html>
