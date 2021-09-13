@@ -2,7 +2,7 @@
  margin: 0;
  padding: 0;
  box-sizing: border-box;
- /*border: 1px solid blue;*/
+/*border: 1px solid blue; */
  font-family: 'Open Sans', sans-serif;
 }   
 
@@ -110,7 +110,109 @@ max-width:  75vw;
     .tarjeta{
         display: flex;
         flex-direction: column;
-    align-items: center;
+        align-items: center;
     }
     
+}
+
+.caracteristicas2{
+    max-width:  1200px;
+    margin: 0 auto;
+    padding: 50px;
+}
+.caracteristicas2 h2, h5{
+   text-align: center;
+}
+.tarjetas2{
+    display: flex;
+    
+}
+
+.precio {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px gray;
+}
+
+.precio *{
+    margin: 5px 0;
+
+}
+
+
+.precio h2, h4,p , footer{
+    text-align: center;
+}
+
+
+.ordernow, .ordernow1,.ordernow2  {
+    background-color:rgb(0, 140, 255);    
+    width: 250px;
+}
+.ordernow:hover, .ordernow1:hover , .ordernow2:hover {    
+    background-color:#c71fe6;
+    color:white;    
+}
+
+.ordernow1 {    
+    margin-top: 10px;
+}
+
+.precio button  {
+    
+    margin-left: 20px;
+}
+
+.valor{
+    width: 20px;
+    color:#3dada4;
+    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 30px;
+    margin-left: 80px;
+    font-stretch:extra-condensed;
+    transform: scaleY(0.8);
+}
+.simbolo{
+    width: 20px;
+    color:#3dada4;
+    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    margin-left: 115px;
+    margin-top: -50px;
+    
+
+}
+
+.simbolo1, .simbolo2 {
+    width: 20px;
+    color:#3dada4;
+    font-weight: bold;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    margin-left: 115px;
+    margin-top: -50px;
+
+
+}
+
+.descripcion{
+    width: 150px;
+    color:#a0a3a3;
+    margin-left: 119px;
+    text-align: left;    
+    font-size: 8px;
+}
+
+footer h6 {
+     color: #b8bdbd;
+
+}
+
+input{
+    height: 30px;
+    font-size: 13px;
+    background-color: #e2ebeb;   
+    color: -internal-light-dark(black, white);
 }
