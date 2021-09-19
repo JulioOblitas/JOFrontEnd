@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.header{
+    border-bottom: 1px solid red;
+    display: flex;
+    align-items: center;
+}
+
+body{
+    display: ;
+}
+.logo img {
+width: 32px;
+margin: 20px;
+}
+
+input {
+    height: 36px;
+    border-radius: 4px;
+    background-color: white;
+    color: gray;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 20px;
+    padding: 0 10px;
+    flex-grow: 1;
+}
+
+.icons{
+    display: flex;
+    align-items: center;
+
+
+}
+.icons img{
+    width: 25px;
+    margin :20px;
+}
+
+a{
+    color: gray;
+    text-decoration: none;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    margin-top: 16px;
+}
+.tile-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 900px;
+    height: 140vh;
+}
+.tile{
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.tile:hover{
+    background-color: white;
+}
+.tile img{
+    border-radius: 8px;
+}
+
+.tile .overlay{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: 90%;
+    padding: 15px;
+}
+
+.tile:hover .overlay{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tile .overlay img{
+     width: 40px;
+     background-color: white;
+     padding: 10px;
+     border-radius: 50%;
+     
+}
+
+.tile .overlay button{
+    
+    background-color: red;
+    font-weight: bold;
+    color: white;
+    padding:  10px;
+     border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+}
+
+.tile-bottom{
+
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+} 
+.tile-bottom img {
+    width: 16px;
+    margin-right: 14px;
+    align-self: center;
+
+}
+
+.tile-bottom p  {
+    font-weight: bold;
+    color : gray;
+
+    font-size: 14px;
+
+}

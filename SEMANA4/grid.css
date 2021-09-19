@@ -1,0 +1,25 @@
+.grid{
+    display: grid;
+    grid-template-rows: 100px 100px 100px;
+    grid-template-columns: 100px 100px 100px 100px;
+    grid-row-gap:10px ;
+    grid-column-gap: 10px;
+    color: white;
+    justify-content: space-between;
+    align-content: center;
+    background: pink;
+    border:3px solid blue;
+    height: 400px;
+    }
+
+    .grid div{
+        background-color: red;
+    }
+
+    .grid div:nth-child(even){
+        background : blue;
+    }
+
+    div{
+        display: block;
+    }

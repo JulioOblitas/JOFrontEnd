@@ -1,0 +1,42 @@
+.nave{
+
+    width: 150px;
+ animation-name: mianimacion;
+ animation-duration: 9s;
+ animation-iteration-count: infinite;
+ 
+ animation-timing-function: linear;
+}
+@keyframes mianimacion{
+
+    0%{
+transform: translate(0,0) rotate(90deg);
+    }
+    25%{
+        transform: translate(500px,0) rotate(90deg);
+        
+        }
+            30%{
+                transform: translate(500px,0) rotate(180deg);
+                
+        }
+            50%{
+            transform: translate(500px,500px) rotate(180deg);
+                        
+             }    
+            63%{
+            transform: translate(500px,500px) rotate(270deg);
+                                
+             }    
+
+            75%{
+             transform: translate(0px,500px) rotate(270deg);
+                }                               
+
+               90%{
+                    transform: translate(0px,500px) rotate(360deg);
+                       }                               
+                       100%{
+                        transform: translate(0px,0px) rotate(360deg);
+                           }          
+}

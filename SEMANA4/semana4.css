@@ -1,0 +1,64 @@
+div{
+
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    color: white;
+    font-size: 20px;
+    box-shadow:  10px 10px 30px 30px #525252, -10px -10px 30px pink , 0 -20PX 10PX blue;
+    margin: 100px;
+
+    
+
+    /*background: linear-gradient(to bottom, yellow , blue);*/
+   /* background: radial-gradient(orange , yellow , green , blue);*/
+}
+p{
+    margin-left: 300px;
+    color: black;
+    width: 100px;
+
+    text-shadow: 0px 5px 5px orange, 0px 30px 5px blue;
+}
+
+h1{
+border: 1px solid;
+background: blue;
+color: white;
+padding: 10px;
+transition-property: color;
+transition-duration: 0.5s;
+transition-timing-function: cubic-bezier(0.08, 0.82, 0.54,-0.01);
+
+}
+h1:hover{
+    border-radius: 20px;
+    color: yellow;
+background-color: coral;
+}
+    
+
+h2{
+     animation-delay: 2;
+    animation-duration: 1s;
+    animation-name:titleAnimation;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes titleAnimation{
+ 0% {
+     background: blue;
+     color: aqua;
+ }
+ 30% {
+          background: red;
+          color: pink;
+ }
+
+ 70% {
+    
+    background: orange;
+    color: rebeccapurple;
+}
+}
