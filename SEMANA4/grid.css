@@ -4,7 +4,7 @@
     grid-template-columns: 100px 100px 100px 100px;
     grid-row-gap:10px ;
     grid-column-gap: 10px;
-    color: white;
+    background-color: aqua;
     justify-content: space-between;
     align-content: center;
     background: pink;
