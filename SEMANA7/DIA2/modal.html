@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+</head>
+<body>
+    
+    <div class = "container-fluid">
+        <button class="btn btn-primary"
+        data-bs-target = "#miModal"  
+        data-bs-toggle = "modal">
+            Abrir Modal
+        </button>
+
+        <button
+        class="btn btn-success"
+        id = "btnAbrir">
+            Abrir JS
+        </button>
+
+
+    </div>
+
+    <div class="modal fade" id = "miModal">
+            <div class = "modal-dialog">
+                <div class="modal-content">
+                    <div class = "modal-header">
+                        <h5>Deseas Formatear tu disco duro</h5>
+                    </div class = "modal-body">
+                    <p>confirmar por favor</p>
+                    <div>
+
+                    </div class = "modal-footer">
+                        <button
+                        class="btn btn-danger"
+                        data-bs-dismiss="modal" 
+                        >
+                        Cerrar
+
+                        </button>
+                    <div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
+    <script src = "./02-modal.js" ></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+ /*  border: 1px solid blueviolet;*/
+}
+.btn-pers{
+    color: black;
+    background-color: white;    
+    border: none;   
+}
+
+.btn-tarea{
+    height: 30px;
+    padding: 2px;
+    text-align: center;
+    width: 80px;
+    
+}
+
+.texto{
+    width:500px;
+}
+
+.titulo{
+        display: flex;
+        align-items: center;
+    justify-content: center; 
+}
+.centrargrupo{
+    display: flex;
+    /*align-items: center;
+    justify-conte/nt: center; */
+    margin-left: 630px;
+}
+
+.resumen{
+    display:block;
+    
+    margin-left: 390px;
+    
+}
+
+
+h6{
+  background-color: aqua;  
+  border-radius: 12px;
+  width:80px;
+}
+
+
+
+.btnopcpri, .btnopcurg , .btnopclen{
+    width:90px;
+}

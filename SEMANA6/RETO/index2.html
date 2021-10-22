@@ -1,0 +1,64 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+<link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+
+
+<div class="raiz">
+  <nav>
+    <h1>CodiResto</h1>
+
+    <button  class = "cantcarrito" id = "btncarrito"> CANT: 0  </button>
+  </nav>
+  
+  <div class="principal">
+    <nav class="menu">
+      <ul>
+        <li>Platos Principales</li>
+        <li>Bebidas</li>
+      </ul>
+    </nav> 
+  
+     <main id = "contenido">
+      </main>
+
+   </div>
+ </div>
+
+
+
+ <div class="carrito">
+  <p id="fecha"></p>
+  <table>
+    <thead>
+      <tr>
+        <th>Item</th>
+        <th>Cantidad</th>
+        <th>P.U.</th>
+        <th>P.T.</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-carrito">
+      
+      
+    </tbody>
+  </table>
+  <div class="resumen">
+    <table>
+      <tbody id="tbody-resumen">
+        
+      </tbody>
+      
+    </table>
+    <button id="btn-pagar">PAGAR ORDEN</button>
+  </div>
+</div>
+
+  <script src="carrito2.js"></script>
+</body>
+</html>

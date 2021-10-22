@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./estilos.css">
+</head>
+<body>
+
+  
+    <form  id = "formTodo">  
+  <div class="raiz">
+    <nav>
+      <h1>CodiResto</h1>
+
+      <button  class = "cantcarrito" id = "btncarrito"> CANT: 0  </button>
+    </nav>
+    
+    <div class="principal">
+      <nav class="menu">
+        <ul>
+          <li>Platos Principales</li>
+          <li>Bebidas</li>
+        </ul>
+      </nav> 
+    
+       <main id = "contenido">
+
+
+
+        <!-- inicia  tarjeta -->
+        <div class="tarjeta">
+          <div class="imagen">
+            <img
+              src="https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80z"
+            />
+          </div>
+          <div class="texto">
+              <h4>Crema de Verduras</h4>
+              <p>Suave crema preparada con una variedad de verduras estacionales</p>
+              <div class="precio">
+                <span>S/ 12</span>
+                <button class="btn-agregar">Agregar</button>
+              </div>
+          </div>
+        </div>
+        
+        <!-- cierra  tarjeta -->
+
+         <!-- inicia  tarjeta -->
+         <div class="tarjeta">
+          <div class="imagen">
+            <img
+              src="https://images.unsplash.com/photo-1529042410759-befb1204b468?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=633&q=80"
+            />
+          </div>
+          <div class="texto">
+              <h4>Albondigas con salsa Barbeque</h4>
+              <p>Albondigas de carne de res condimentandas con finas hierbas acompañadas con Salsa Bbq y espinacas</p>
+              <div class="precio">
+                <span>S/ 18</span>
+                <button class="btn-agregar">Agregar</button>
+              </div>
+          </div>
+        </div>
+        <!-- cierra  tarjeta -->
+
+
+
+        <!-- inicia  tarjeta -->
+         <div class="tarjeta">
+          <div class="imagen">
+            <img
+              src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            />
+          </div>
+          <div class="texto">
+        
+              <h4>"Hamburguesa Royal"</h4>
+              <p>Carne, Queso, Huevo y tomate, todo envuelto con pan</p>
+              <div class="precio">
+                <span>S/ 14</span>
+                <button class="btn-agregar" >Agregar</button>
+              </div>
+          </div>
+        </div>
+        <!-- cierra  tarjeta -->
+
+        <!-- inicia  tarjeta -->
+        <div class="tarjeta">
+          <div class="imagen">
+            <img
+              src="https://images.unsplash.com/photo-1458642849426-cfb724f15ef7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80"
+            />
+          </div>
+          <div class="texto">
+        
+              <h4>"Pizza de la casa"</h4>
+              <p>Pizza con receta original de la casa</p>
+              <div class="precio">
+                <span>S/ 20</span>
+                <button class="btn-agregar">Agregar</button>
+              </div>
+          </div>
+        </div>
+        <!-- cierra  tarjeta -->
+
+
+
+
+<!-- inicia  tarjeta -->
+<div class="tarjeta">
+  <div class="imagen">
+    <img
+      src="https://images.unsplash.com/photo-1535399831218-d5bd36d1a6b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+    />
+  </div>
+  <div class="texto">
+
+      <h4>"Ceviche de la casa"</h4>
+      <p>Plato Bandera Peruano acompañado con bebida a elección</p>
+      <div class="precio">
+        <span>S/ 20</span>
+        <button class="btn-agregar">Agregar</button>
+      </div>
+  </div>
+</div>
+<!-- cierra  tarjeta -->
+
+
+<!-- inicia  tarjeta -->
+<div class="tarjeta">
+  <div class="imagen">
+    <img
+      src="https://images.unsplash.com/photo-1614563637806-1d0e645e0940?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80"
+    />
+  </div>
+  <div class="texto">
+
+      <h4>"Ramen Fusión"</h4>
+      <p>Ramen preparado con ingredientes Peruanos</p>
+      <div class="precio">
+        <span>S/ 19</span>
+        <button class="btn-agregar">Agregar</button>
+      </div>
+  </div>
+</div>
+<!-- cierra  tarjeta -->
+
+
+       
+</main>
+
+     </div>
+   </div>
+
+ 
+
+   <div class="carrito">
+    <p id="fecha"></p>
+    <table>
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Cantidad</th>
+          <th>P.U.</th>
+          <th>P.T.</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-carrito">
+        <tr>
+          <td>Pingüinito</td>
+          <td>5</td>
+          <td>12</td>
+          <td>60</td>
+        </tr>
+        <tr>
+          <td>Pingüinito</td>
+          <td>5</td>
+          <td>12</td>
+          <td>60</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    <div class="resumen">
+      <table>
+        <tbody id="tbody-resumen">
+          <tr>
+            <td>TOTAL</td>
+            <td>60</td>
+          </tr>
+        </tbody>
+        
+      </table>
+      <button id="btn-pagar">PAGAR ORDEN</button>
+    </div>
+  </div>
+ </form>  
+<script src="/SEMANA6/RETO/carrito.js"></script>
+</body>
+</html>

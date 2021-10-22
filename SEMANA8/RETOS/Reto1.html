@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+    
+   <link rel="stylesheet" href="./estilos.css">
+</head>
+<body id = "cuerpo">
+
+
+     
+
+  
+    
+  <div class = "titulo">
+    <input type="text" class = "texto" id = "tarea" placeholder=" Type your awesome task here">
+    <button class="btn btn-secondary btn-tarea" id = "btnadic" > Add Task</button>
+     <br>
+     <br>
+    </div>
+
+     <div class = "contenido centrargrupo">
+    
+      <div class="btn-group">
+        
+      <button type="button" class="btn btn-secondary btn-pers">PRIO</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item dropdown-item1"  href="#">Minor</a></li>
+          <li><a class="dropdown-item dropdown-item1"  href="#">Medium</a></li>
+          <li><a class="dropdown-item dropdown-item1"  href="#">Major</a></li>        
+        </ul>
+      
+    
+    </div>
+    <div class="btn-group">
+
+        <button type="button" class="btn btn-secondary btn-pers">URGENCY</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item dropdown-item2" href="#">Tomorrow</a></li>
+          <li><a class="dropdown-item dropdown-item2" href="#">Today</a></li>
+          <li><a class="dropdown-item dropdown-item2" href="#">Has times</a></li>
+          
+
+        </ul>
+      
+    
+    </div>
+    <div class="btn-group">
+        <button type="button" class="btn btn-secondary btn-pers">LENGTH</button>
+        <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item dropdown-item3" href="#">10 min</a></li>
+            <li><a class="dropdown-item dropdown-item3" href="#">30 min</a></li>
+            <li><a class="dropdown-item dropdown-item3" href="#">Hora</a></li>
+            <li><a class="dropdown-item dropdown-item3" href="#">Break</a></li>
+          
+
+        </ul>
+      
+    
+    </div>
+
+   
+</div>
+<br>
+<div class = "resumen" id = "resultado">
+
+
+</div>
+
+<script src="./apptodolist.js"></script>  
+<script src="/Bootstrap/js/bootstrap.bundle.min.js "></script>
+
+     
+</body>
+
+</html>

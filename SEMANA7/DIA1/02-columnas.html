@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+    <style>
+        .oscuro{
+            background-color: orange;
+        }
+        .claro{
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+
+    <main class = "container">
+    <h2>Columnas</h2>
+
+    <div class = "row">
+        <div class = "col oscuro">
+                1ra Columnas
+        </div>
+
+        <div class = "col claro">
+            2da Columnas
+        </div>
+        <div class = "col oscuro">
+            3ra Columnas
+        </div>
+
+        <div class = "col claro">
+            4ta Columnas
+        </div>
+
+    </div>
+    <hr/>
+
+    <div class= "row" >
+
+        <div class = "col-8 oscuro">
+            Columnas de 8 
+        </div>
+        <div class = "col-4 claro">
+             Columnas de 4
+        </div>
+
+            <!-- colapsar -->
+        <div class = "col-3 oscuro">
+            Columnas de 3
+       </div>
+
+    </div>
+    <hr>
+    <h2>Columnas Responsivas con Breakpoints</h2>
+    <h3><code>col-xl-#</code></h3>
+    <h5>xl - las columnas colapsan se es menor a 1200</h5>
+
+    <div class="row">
+         <div class = "col-xl-6 oscuro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+        
+        <div class = "col-xl-6 claro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        </div>
+    </div>
+    
+    <hr>
+        <h3><code>col-lg-#</code></h3>
+        <h5>lg - las columnas colapsan se es menor a 992</h5>
+        
+        <div class="row">
+            <div class = "col-lg-7 oscuro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        
+            <div class = "col-lg-3 claro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        </div>
+        
+        <hr>
+
+        <h3><code>col-md-#</code></h3>
+        <h5>md - las columnas colapsan se es menor a 768</h5>
+        
+        <div class="row">
+            <div class = "col-md-7 oscuro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        
+            <div class = "col-md-3 claro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+
+            <div class = "col-md-2 oscuro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+        </div>
+        <hr>
+        <h3><code>col-sm-#</code></h3>
+        <h5>sm - las columnas colapsan se es menor a 576</h5>
+        
+        <div class="row">
+            <div class = "col-sm-4 oscuro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+        
+            <div class = "col-sm-4 claro">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </div>
+
+            <div class = "col-sm-4 oscuro">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                </div>
+        </div>
+
+     <hr>
+      
+     <h3>Combinar Break</h3>
+     <h5>podemos combinar los tamaños</h5>
+
+     <div class = "row">
+     <div class = "col-xl-7 col-lg-6 col-md-12 col-sm-12 oscuro">
+            noticia importante
+     </div>
+
+     <div class = "col-xl-3 col-lg-4 col-md-6 col-sm-8 claro">
+        noticia buena
+ </div>
+ <div class =    "col-xl-2 col-lg-2 col-md-6 col-sm-4 oscuro">
+    publcidad
+</div>
+    </div>
+
+    
+
+
+
+
+</main>
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>
