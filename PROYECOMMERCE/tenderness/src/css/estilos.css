@@ -1,0 +1,188 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+   }   
+   
+  h6{
+    margin-right: 10px;  
+    width: 80px;
+      font-weight: bold;
+      color: aliceblue;
+      
+      font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  
+ .contenedorheader{
+    
+
+    display: flex; 
+    align-items: center;
+    
+    
+ }  
+.imglogocabecera, .imgbuscar{
+    height: 50px;
+    width: 50px;
+   
+ }
+
+ .imglogoempresa{
+    height: 120px;
+    width: 250px;
+    margin-left: 150px;
+
+ }
+
+ .RedesSociales{
+    margin-left: 830px;
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;
+}
+
+.h6Email {
+    margin-left: 8px;
+}
+.h6Telefono {
+    margin-left: 8px;
+}
+
+.Email{
+    
+    margin-left: 20px;
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;
+}
+
+.Telefono{
+
+    display: flex;
+    align-items: center;   
+    justify-content: space-between;
+}
+
+ header {
+ background-color:crimson; 
+}
+
+.contenedor2{
+    display: flex;
+    
+    height: 125px;
+}
+
+.Logo{
+    width: 200px;
+    display:flex;
+  
+    /*background-color:orange;*/
+}
+.Buscar{
+
+    margin-left: 150px; 
+    display:flex;
+    height: 100px;
+    margin-top: 70px;
+    
+}
+
+
+.txtbuscar{
+  width: 750px;  
+  height: 50px; 
+  font-size: medium;
+  margin-left: 1px; 
+  border-radius: 15px;
+  border-style: double;
+  border-color:red;
+  color:crimson;
+  font-weight: bold;
+  font-size: x-large;
+  
+
+  
+}
+.btnacceso{
+ margin-left: 60px;
+ border-radius: 10px;
+ color: white;
+ height: 50px;
+ width: 120px;
+ background-color: crimson;
+}
+
+
+
+.contenedor {
+    display: flex;
+    height: 100%;
+}
+
+.aplicacion {
+    width: 80%;
+    height: 100%;
+    background-color: #f5f5f6;
+}
+
+
+.principal {
+    display: flex;
+    height: 100%;
+}
+
+
+main {
+    height: 100%;
+    width: 80%;
+    /* trabaja en 2 dimensiones */
+    display: grid;
+    /* cuantas columnas quiero, explicito*/
+    grid-template-columns: repeat(4, 1fr);
+    /* No se exactamente cuantas filas tendre, implicito */
+    grid-auto-rows: 400px;
+    padding: 20px;
+    /* separación entre elementos de grid */
+    gap: 10px;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 10px gray;
+}
+
+.img-top {
+    width: 100%;
+    border-radius: 5px;
+    height: 60%;
+}
+
+.text-bottom {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 40%;
+}
+
+.text-bottom > * {
+    margin: 5px 0;
+}
+
+.prod-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.prod-info button {
+    background-color: steelblue;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
