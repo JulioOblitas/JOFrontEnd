@@ -6,9 +6,12 @@ import "./css/estilos.css";
 import { useState } from "react";
 
 //import NombreFunción from "ruta/Nombre_Archivo"
-import Header from "./components/header";
-import NavSide from "./components/navside";
-import Main from "./components/main";
+import  {BrowserRouter as  Router, Routes, Route } from "react-router-dom";
+import CrearProductosView from './views/CrearProductosView'
+import CrearCategoriasView from './views/CrearCategoriasView';
+
+import Main   from "./components/main";
+
 
 import { listaRopas } from "./utils/data";
 
@@ -34,18 +37,18 @@ export default function App() {
 
     return (
         <>
-        
-                <Header />                
-                <NavSide />
-                <div className="contenedor">
-                <div className="aplicacion">
-                <div className="principal">
+                    <Router>
+                    <Routes>
+    
+                    <Route path = "/" element = {<Main lista={listaRopas} anadirACarrito={anadirACarrito} />}/>
+                    <Route path = "/crearproducto" element ={<CrearProductosView />}/>
+                    <Route path = "/crearcategoria" element={<CrearCategoriasView />} />
                     
-                    {/* <Componente nombre_props={valor_props} */}
-                    <Main lista={listaRopas} anadirACarrito={anadirACarrito} />
-                </div>
-                </div>
-                </div>
+
+       </Routes>
+       </Router>
+
+
         
         </>
         

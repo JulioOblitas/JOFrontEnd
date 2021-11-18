@@ -18,32 +18,32 @@ let listaRopas = [
     },
     {
         id: 3,
-        nombre: "Hamburguesa Royal",
-        descripcion: "Carne, Queso, Huevo y tomate, todo envuelto con pan",
+        nombre: "SACOS",
+        descripcion: "Casual Elegante",
         precio: 11.0,
         stock: 14,
         imagen: "/imgropas/img3.png"
     },
     {
         id: 4,
-        nombre: "Pizza de la casa",
-        descripcion: "Pizza con recetea original de la casa",
+        nombre: "POLO FLEX",
+        descripcion: "Sport casual",
         precio: 14.0,
         stock: 7,
         imagen: "/imgropas/img4.png"
     },
     {
         id: 5,
-        nombre: "Ceviche de la casa",
-        descripcion: "Plato Bandera Peruano acompañado con bebida a elección",
+        nombre: "CAMISA",
+        descripcion: "Diseño Elegante",
         precio: 20.0,
         stock: 10,
         imagen: "/imgropas/img5.png"
     },
     {
         id: 6,
-        nombre: "Ramen Fusión",
-        descripcion: "Ramen preparado con ingredientes Peruanos",
+        nombre: "POLO FLEX CASUAL",
+        descripcion: "Diseño exclusivo",
         precio: 19.0,
         stock: 6,
         imagen: "/imgropas/img6.png"

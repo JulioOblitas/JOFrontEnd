@@ -4,8 +4,10 @@ import imgEmail from "../imagenes/email.png"
 import imgTelefono from "../imagenes/telefono.png"
 import imgFacebook from "../imagenes/facebook.png"
 import imgInstagram from "../imagenes/instagram.png"
-import imgLogoEmpresa from "../imagenes/imglogoemp.png"
+import imgLogoEmpresa from "../imagenes/logoemp.png"
 import imgLogoBuscar from "../imagenes/buscando.png"
+
+import { Link } from "react-router-dom"
 
 export default function header() {
     return (
@@ -40,7 +42,12 @@ export default function header() {
                 <div className = "Buscar">
                     <input className = "txtbuscar" type="text" placeholder = "Tenderness siempre contigo.. buscalo" />
                     <img  className = "imgbuscar"  src= {imgLogoBuscar}  alt=""/>                        
-                    <button className = "btnacceso">ACCESO</button>
+                    
+                    {/*<button className = "btnacceso">ACCESO</button>*/}
+                    
+                    <Link to ="/crearProducto" className = "btn btn-primary btnacceso" >
+                        ACCESO
+                    </Link>
                 </div>
             </div>
            
