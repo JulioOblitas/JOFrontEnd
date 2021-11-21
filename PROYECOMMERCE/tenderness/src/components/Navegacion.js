@@ -1,26 +1,17 @@
 import { useContext, useRef } from "react";
-import { AuthContext } from "../context/authContext";
-import { CarritoContext } from "../context/carritoContext";
+import { AuthContext } from "../context/AuthContext";
 import { Navbar, Container, Nav, NavLink, NavDropdown } from "react-bootstrap";
-
 import { Link, useNavigate } from "react-router-dom";
-import Badge from "@mui/material/Badge";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+
+
+
 
 export default function Navegacion() {
     const { user, signOut } = useContext(AuthContext);
-    const { carrito } = useContext(CarritoContext);
+    const { signIn } = useContext(AuthContext);
 
-    const refBuscar = useRef();
-
-    const navigate = useNavigate();
     
-    const totalCarrito = carrito.reduce((total, prod) => {
-        return total + prod.cantidad;
-    }, 0);
-    const manejarBusqueda = () => {
-        navigate(`/productosfiltros/${refBuscar.current.value}`);
-    };
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -31,9 +22,7 @@ export default function Navegacion() {
                         <Link className="nav-link" to="/">
                             Home
                         </Link>
-                        <Link className="nav-link" to="/productosfiltros">
-                            Productos
-                        </Link>
+                        
                         {user ? (
                             <>
                                 <Link className="nav-link" to="/checkout">
@@ -46,19 +35,6 @@ export default function Navegacion() {
                     <Nav>
 
                     
-                        <div className="d-flex">
-                            <input type="text" placeholder="Buscar producto..." className="form-control" />
-                            <button className="btn btn-outline-dark">
-                                <i className="fas fa-search"></i>
-                            </button>
-                        </div>
-                        <Link className="nav-link" to="/carrito">
-                            <Badge badgeContent={totalCarrito} color="primary">
-                                <ShoppingCartIcon />
-                            </Badge>
-                        </Link>
-                       
-                       
                         {/* Login y Logout */}
 
                         {user ? (
@@ -78,7 +54,7 @@ export default function Navegacion() {
                                 <NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
                             </NavDropdown>
                         ) : (
-                            <Link className="nav-link" to="/login">
+                            <Link className="nav-link" to="/login" onClick={signIn}>
                                 Ingresar
                             </Link>
                         )}

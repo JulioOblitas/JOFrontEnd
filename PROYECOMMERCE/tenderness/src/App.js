@@ -1,9 +1,8 @@
-
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/estilos.css";
+import { AuthContextProvider } from "./context/AuthContext";
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 //import NombreFunción from "ruta/Nombre_Archivo"
 import  {BrowserRouter as  Router, Routes, Route } from "react-router-dom";
@@ -11,9 +10,9 @@ import CrearProductosView from './views/CrearProductosView'
 import CrearCategoriasView from './views/CrearCategoriasView';
 
 import Main   from "./components/main";
-
-
 import { listaRopas } from "./utils/data";
+
+
 
 export default function App() {
     const [carrito, setCarrito] = useState([]);
@@ -34,9 +33,11 @@ export default function App() {
     };
 
     //cuando utilizemos hooks tienen que estar dentro del componente
-
+    
+    
     return (
         <>
+            <AuthContextProvider>
                     <Router>
                     <Routes>
     
@@ -48,10 +49,9 @@ export default function App() {
        </Routes>
        </Router>
 
-
+       </AuthContextProvider>
         
         </>
         
     );
 }
-

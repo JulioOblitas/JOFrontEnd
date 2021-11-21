@@ -93,10 +93,10 @@
 
 
 .txtbuscar{
-  width: 750px;  
+  width: 740px;  
   height: 50px; 
   font-size: medium;
-  margin-left: 1px; 
+  margin-left: -15px; 
   border-radius: 15px;
   border-style: double;
   border-color:red;
