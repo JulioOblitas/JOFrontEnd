@@ -3,11 +3,12 @@ import { CarritoContext } from "../context/carritoContext"
 import {useParams} from "react-router-dom"
 import { ObtenerProductosPorId } from "../services/productoService"
 import ReactImageMagnify from  "react-image-magnify"
-
+import { ObtenerCategorias } from "../services/categoriaService";
 
 export default function ProductoDetalleView() {
     const [producto,setProducto] = useState(null);
     const [cantidad,setCantidad] = useState(1);
+    const [categoria, setCategoria] = useState("");
 
      const {id } = useParams();
 
@@ -16,17 +17,17 @@ export default function ProductoDetalleView() {
      const getProducto  = async () =>{
          try {
              const prodObtenido = await ObtenerProductosPorId(id);
+             const catObtenidas = await ObtenerCategorias();
+            const catProducto = catObtenidas.find((cat) => cat.id === prodObtenido.categoria_id);
              setProducto(prodObtenido);
+             setCategoria(catProducto); //todo el objeto de la categoria, id, nombre, descripcion e imagen
          } catch (error) {
-             
+            console.log(error);
          }
      }
 
 
-     useEffect(()=>{
-
-        getProducto();
-     },[] );
+    
 
 
          const modificarCantidad =  (numero) =>{
@@ -40,13 +41,37 @@ export default function ProductoDetalleView() {
 
                 const  {id, nombre, precio} = producto;
 
+                /** ES LO MISMO QUE ABAJO   {   id: producto.id,
+			 nombre: producto.nombre,
+			precio: producto.precio,
+			cantidad: cantidad,
+			}; */
+
                 const nuevoproducto = {
                     id,nombre,precio,cantidad
                 };
                 anadirACarrito(nuevoproducto);
             }
 
+            useEffect(()=>{
+
+                getProducto();
+             },[] );
     return (
+<>
+        <div
+        className="title-product py-5 mb-5"
+        style={{
+            backgroundImage: `url('${categoria.imagen}')`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+        }}
+        >
+        <h2 className="fw-bold container">
+            {/* si categoria existe, pregunta por la propiedad nombre */}
+            {categoria?.nombre} - {producto?.nombre}
+        </h2>
+    </div>
         <div className="container">
             {/* en muchos casos es necesario y recomendable validar si algo es undefined o null */}
             <div className="row my-3">
@@ -105,5 +130,7 @@ export default function ProductoDetalleView() {
                 ) : null}
             </div>
         </div>
+
+        </>
     )
 }

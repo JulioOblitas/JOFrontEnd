@@ -1,7 +1,9 @@
 
 import { useContext, useRef } from "react";
 import { AuthContext } from "../context/AuthContext";
+
 import { Navbar, Container, Nav, NavLink, NavDropdown } from "react-bootstrap";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import imgEmail from "../imagenes/email.png"
 import imgTelefono from "../imagenes/telefono.png"
 import imgFacebook from "../imagenes/facebook.png"
@@ -9,15 +11,29 @@ import imgInstagram from "../imagenes/instagram.png"
 import imgLogoEmpresa from "../imagenes/logoemp.png"
 import imgLogoBuscar from "../imagenes/buscando.png"
 import { Link } from "react-router-dom"
-
-
+import CheckOutView from  "../views/ChekOutView"
+import PrivateRoute from  "../components/PrivateRoute"
+import { alertTitleClasses, getAlertUtilityClass } from "../../../../SEMANA11/store/node_modules/@mui/material";
+import CrearProductosView from "../views/CrearProductosView";
 
 export default function Header() {
     const { user, signOut } = useContext(AuthContext);
     const { signIn } = useContext(AuthContext);
+    
 
-   
-    return (
+    const linkear =  () =>{
+        alert("doy la accion") ; 
+        
+        
+        
+        
+
+    }
+
+          return (
+        
+        
+       
         <header>
          <div className = "contenedorheader" >
 
@@ -52,9 +68,11 @@ export default function Header() {
                     
                    {/* <button className = "btnacceso" onClick={signIn} >ACCESO</button>**/}
                     
-                 {/*   <Link to ="/crearProducto" className = "btn btn-primary btnacceso" onClick={signIn}  >
+                   {/* <Link to ="/crearProducto" className = "btn btn-primary btnacceso"   >
                         ACCESO
                     </Link>*/}
+
+
                      {user ? (
                             <NavDropdown
                                 title={
@@ -69,8 +87,19 @@ export default function Header() {
                                     </div>
                                 }
                             >
-                                <NavDropdown.Item>OPERACIONES</NavDropdown.Item>
-                                <NavDropdown.Item onClick={signOut}>SALIR</NavDropdown.Item>
+                                {/*<Link to = "/crearProducto" className = "btn btn-primary ">
+                                    OPERACIONES
+                                </Link>*/}
+                                
+                                
+                                    <Link to = "/operaciones" className = "btn btn-primary btnoperacion">
+                                   {/* <NavDropdown.Item>  
+                                    </NavDropdown.Item>*/}
+                                        OPERACIONES    
+                                    </Link> 
+                                
+                                
+                                <NavDropdown.Item   onClick = {signOut} >SALIR</NavDropdown.Item>
                                 
                             </NavDropdown>
                         ) : (

@@ -36,6 +36,10 @@ export default function Navegacion() {
 
                     
                         {/* Login y Logout */}
+                        
+
+                        
+
 
                         {user ? (
                             <NavDropdown
@@ -54,7 +58,7 @@ export default function Navegacion() {
                                 <NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
                             </NavDropdown>
                         ) : (
-                            <Link className="nav-link" to="/login" onClick={signIn}>
+                            <Link className="nav-link" to="/login">
                                 Ingresar
                             </Link>
                         )}

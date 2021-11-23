@@ -8,11 +8,12 @@ import { useState, useContext } from "react";
 import  {BrowserRouter as  Router, Routes, Route } from "react-router-dom";
 import CrearProductosView from './views/CrearProductosView'
 import CrearCategoriasView from './views/CrearCategoriasView';
-
+import CheckOutView from  "./views/ChekOutView"
 import Main   from "./components/main";
 import { listaRopas } from "./utils/data";
+import OperacionesView from "./views/OperacionesView";
 
-
+import ListaProductosView  from "./views/ListaProductosView";
 
 export default function App() {
     const [carrito, setCarrito] = useState([]);
@@ -42,14 +43,18 @@ export default function App() {
                     <Routes>
     
                     <Route path = "/" element = {<Main lista={listaRopas} anadirACarrito={anadirACarrito} />}/>
-                    <Route path = "/crearproducto" element ={<CrearProductosView />}/>
+                    <Route path = "/operaciones" element ={<OperacionesView />}/>                    
+                    <Route path = "/crearproducto" element ={<CrearProductosView />}/>                    
                     <Route path = "/crearcategoria" element={<CrearCategoriasView />} />
+                    <Route path = "/ListarProducto" element ={<ListaProductosView />}/>
                     
-
+ {/**Ruta privadas*/}
+                         
        </Routes>
        </Router>
 
        </AuthContextProvider>
+
         
         </>
         

@@ -12,7 +12,7 @@ import { obtenerCategorias } from "../services/categoriasServices";
 let imagen;  //variable global no definida
 
 export default function CrearProductosView() {
-
+    console.log("entrando");
     const [value, SetValue] = useState( {
         nombre : '',
         descripcion : '',

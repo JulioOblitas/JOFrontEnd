@@ -66,18 +66,19 @@ export default function ProductoConFiltrosView() {
                     >
                         Todas las categorías
                     </button>
-                    {categorias.map((cat, i) => (
-                        <button
-                            className="btn btn-outline-dark btn-sm"
+                        
+                         {categorias.map((cat, i) => (
+                            <button className="btn btn-outline-dark btn-sm"
                             key={i}
                             onClick={() => {
                                 filtrarPorCategoria(cat.id);
                             }}
-                        >
+                            >
                             {cat.nombre}
-                        </button>
-                    ))}
+                            </button>
+                        ))}
                 </div>
+                
                 <div>
                     <small>Filtro por precio:</small>
                     <Slider value={precio} onChange={manejarFiltroPrecio} valueLabelDisplay="auto" min={1} max={500} />

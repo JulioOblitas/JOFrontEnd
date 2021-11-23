@@ -209,3 +209,55 @@ main {
     border-radius: 5px;
     padding: 5px 10px;
 }
+
+.btnoperacion{
+    width:150px;
+    margin-left: 3px;
+    font-weight: bold;
+}
+
+.contenedoroperaciones{
+        
+    background-color:azure;
+        border-radius: 30px;
+    height: 60px;
+    width: 800px;
+    display:flexbox;
+    padding-top: 10px;
+    margin-top: 5px;
+    margin-left: 180px;
+    align-content: center; 
+    justify-content: space-between;
+}
+
+.btnoperaciones{
+    
+		width:15%;
+		
+		
+}
+
+.cajastextonombre {
+    width : 330px;
+    margin-left: 100px;
+}
+ 
+.cajastextodescripcion{
+    width : 330px;
+    margin-left: 75px;
+}
+.cajastextoprecio{
+    width : 330px;
+    margin-left: 112px;
+}
+.cajastextocategoria{
+    width : 330px;
+    margin-left: 85px;
+}
+.labelalinear  {
+    margin-left: 30px;
+}
+.tabladatos{
+    margin-left: 550px;
+    margin-top: -300px;
+}
