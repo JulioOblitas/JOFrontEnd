@@ -59,7 +59,7 @@ export default function ListaProductosView() {
     };
     
    
-    const getpruebas = (idCategoria) => {
+    const getMostraCategorias = (idCategoria) => {
 
         
         let descrip 
@@ -131,11 +131,8 @@ export default function ListaProductosView() {
                         */}
                          
                          
-                         {getpruebas(categoria_id)}          
-                        
-                        
-                       
-                        
+                            {getMostraCategorias(categoria_id)}          
+                                                                                           
                             <td>{nombre} {id}</td>
                             <td>{descripcion}</td>
                             <td>{precio}</td>

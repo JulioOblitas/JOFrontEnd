@@ -1,4 +1,4 @@
-import img1 from "../imagenes/img1.png"
+    
 export default function Producto({ item, anadirACarrito }) {
     //Como item es un obj que contiene precio, id, nombre, descripcion, url_imagen
     const { id, nombre, descripcion, precio, imagen } = item;

@@ -10,10 +10,11 @@ import CrearProductosView from './views/CrearProductosView'
 import CrearCategoriasView from './views/CrearCategoriasView';
 import CheckOutView from  "./views/ChekOutView"
 import Main   from "./components/main";
-import { listaRopas } from "./utils/data";
+
 import OperacionesView from "./views/OperacionesView";
 
 import ListaProductosView  from "./views/ListaProductosView";
+import EditarProductosView from "./views/EditarProductosView";
 
 export default function App() {
     const [carrito, setCarrito] = useState([]);
@@ -40,10 +41,12 @@ export default function App() {
         <>
             <AuthContextProvider>
                     <Router>
+                    
+                    
                     <Routes>
-    
-                    <Route path = "/" element = {<Main lista={listaRopas} anadirACarrito={anadirACarrito} />}/>
-                    <Route path = "/operaciones" element ={<OperacionesView />}/>                    
+    |                <Route path = "/" element = {<Main anadirACarrito={anadirACarrito} />}/>
+                    <Route path = "/operaciones" element ={<OperacionesView />}/> 
+                    <Route path = "/editarproducto/:id" element={<EditarProductosView  />}/>                             
                     <Route path = "/crearproducto" element ={<CrearProductosView />}/>                    
                     <Route path = "/crearcategoria" element={<CrearCategoriasView />} />
                     <Route path = "/ListarProducto" element ={<ListaProductosView />}/>

@@ -22,18 +22,11 @@ export default function Header() {
     
 
     const linkear =  () =>{
-        alert("doy la accion") ; 
-        
-        
-        
-        
-
+        alert("doy la accion") ;         
     }
 
           return (
         
-        
-       
         <header>
          <div className = "contenedorheader" >
 
@@ -64,7 +57,7 @@ export default function Header() {
 
                 <div className = "Buscar">
                     <input className = "txtbuscar" type="text" placeholder = "Tenderness siempre contigo.. buscalo" />
-                    <img  className = "imgbuscar"  src= {imgLogoBuscar}  alt=""/>                        
+                   <a href = "#"> <img  className = "imgbuscar"  src= {imgLogoBuscar}  alt=""/>  </a>
                     
                    {/* <button className = "btnacceso" onClick={signIn} >ACCESO</button>**/}
                     

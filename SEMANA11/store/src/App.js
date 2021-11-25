@@ -1,5 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
 import { AuthContextProvider } from "./context/authContext";
+import CarritoContextProvider from "./context/carritoContext";
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PrivateRoute from "./components/PrivateRoute";
@@ -8,10 +10,11 @@ import LoginView from "./views/LoginView";
 import CheckOutView from  "./views/ChekOutView"
 import Navegacion from "./components/Navegacion";
 import ProductoDetalleView from "./views/ProductoDetalleView";
-import CarritoContextProvider from "./context/carritoContext";
+
 import CarritoView from "./views/CarritoView";
 import NotFound from "./views/NotFound";
 import ProductoConFiltrosView from "./views/ProductoConFiltrosView";
+import Footer from "./components/Footer";
 
 export default function App() {
     return (
@@ -43,6 +46,7 @@ export default function App() {
                     />
                     
                 </Routes>
+                <Footer />
             </Router>
             </CarritoContextProvider>
         </AuthContextProvider>

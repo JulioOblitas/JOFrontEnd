@@ -2,7 +2,7 @@ import { useState,  useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 
 import { crearProducto, subirImagen } from "../services/productosServices";
-import FormProducto from "../components/formproducto";
+import FormProducto from "../components/Formproducto"
 import Cargando from "../components/cargando";
 import Swal from "sweetalert2";
 import { obtenerCategorias } from "../services/categoriasServices";
