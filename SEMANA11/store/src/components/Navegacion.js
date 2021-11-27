@@ -1,4 +1,4 @@
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContext } from "../context/authContext";
 import { CarritoContext } from "../context/carritoContext";
 import { Navbar, Container, Nav, NavLink, NavDropdown } from "react-bootstrap";
@@ -11,6 +11,9 @@ export default function Navegacion() {
     const { user, signOut } = useContext(AuthContext);
     const { carrito } = useContext(CarritoContext);
 
+     const [buscar, setBuscar] = useState('');
+
+
     const refBuscar = useRef();
 
     const navigate = useNavigate();
@@ -18,9 +21,17 @@ export default function Navegacion() {
     const totalCarrito = carrito.reduce((total, prod) => {
         return total + prod.cantidad;
     }, 0);
+
+
     const manejarBusqueda = () => {
-        navigate(`/productosfiltros/${refBuscar.current.value}`);
+
+       
+        //*navigate(`/productosfiltros/${refBuscar.current.value}`);
+        navigate(`/productosfiltros/${buscar}`);
     };
+
+
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -47,8 +58,8 @@ export default function Navegacion() {
 
                     
                         <div className="d-flex">
-                            <input type="text" placeholder="Buscar producto..." className="form-control" />
-                            <button className="btn btn-outline-dark">
+                            <input type="text" value = {buscar}  onChange={e => setBuscar(e.target.value)} placeholder="Buscar producto..." className="form-control" />
+                            <button className="btn btn-outline-dark" onClick={manejarBusqueda} >
                                 <i className="fas fa-search"></i>
                             </button>
                         </div>

@@ -1,0 +1,33 @@
+
+<p>{{texto}}</p>
+
+<ul>
+    <li *ngFor="let of de actividades">    
+            {{actividades}}
+    </li>
+</ul>
+
+<div *ngIf="losQuiere">
+    Van a tener una noche buena 
+
+</div>
+
+<ng-template #noLosQuiere>
+    Party Hartd!!
+</ng-template>
+
+<img [src] = "urlImagen" alt = "imagencita">
+<br>
+
+<input 
+	[(ngModel)]="nuevaActividad"
+	type="text" 
+	placeholder="Ej. Tomar Fotos"
+>
+
+<button (click) = "agregarActividad()" >
+    Agregar Actividad
+</button>
+
+
+

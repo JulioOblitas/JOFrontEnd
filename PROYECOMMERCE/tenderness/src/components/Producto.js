@@ -1,22 +1,9 @@
-    
-export default function Producto({ item, anadirACarrito }) {
+
+export default function Producto({ item }) {
     //Como item es un obj que contiene precio, id, nombre, descripcion, url_imagen
     const { id, nombre, descripcion, precio, imagen } = item;
 
-    const ejecutarCarrito = () => {
-        // let objetoCarrito = {
-        //     id: id,
-        //     nombre: nombre,
-        //     precio: precio,
-        // };
-        let objetoCarrito = {
-            id,
-            nombre,
-            precio,
-        };
-        anadirACarrito(objetoCarrito);
-    };
-    console.log (imagen)
+
     return (
         
         <div className="producto">
@@ -27,7 +14,7 @@ export default function Producto({ item, anadirACarrito }) {
                 <p>{descripcion}</p>
                 <div className="prod-info">
                     <span>S/ {precio}</span>
-                    <button className="btn-agregar" onClick={ejecutarCarrito}>
+                    <button className="btn-agregar" >
                         Agregar
                     </button>
                 </div>

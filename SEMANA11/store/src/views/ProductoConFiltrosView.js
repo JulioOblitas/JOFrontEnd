@@ -36,6 +36,7 @@ export default function ProductoConFiltrosView() {
 
     const filtrarPorCategoria = (idCategoria) => {
         console.log({ idCategoria });
+        
         const productosFiltrados = productosOriginal.filter((prod) => prod.categoria_id === idCategoria);
         setProductos(productosFiltrados);
     };
@@ -74,8 +75,10 @@ export default function ProductoConFiltrosView() {
                                 filtrarPorCategoria(cat.id);
                             }}
                             >
+
+                                
                             {cat.nombre}
-                            </button>
+                     </button>
                         ))}
                 </div>
                 
@@ -84,6 +87,7 @@ export default function ProductoConFiltrosView() {
                     <Slider value={precio} onChange={manejarFiltroPrecio} valueLabelDisplay="auto" min={1} max={500} />
                 </div>
                 <div className="row my-3">
+                    
                     {productos.map((prod, i) => (
                         <div className="col-12 col-md-6 col-lg-4" key={i}>
                             <ProductoCard producto={prod} />

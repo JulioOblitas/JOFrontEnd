@@ -2,9 +2,6 @@
 import { useState, useEffect } from "react";
 import { obtenerProductos } from "../services/productosServices";
 import Producto from "./producto";
-import Header from "./Header";
-import NavSide from "./navside";
-import Footer from "./footer"
 
 
 //<Main lista={listaPlatillos} />
@@ -14,7 +11,11 @@ import Footer from "./footer"
 
 
 
-export default function Main({ lista, anadirACarrito }) {
+export default function Main( {miprop}) {
+   
+   
+console.log(miprop);
+    //cuando utilizemos hooks tienen que estar dentro del componente
     
 const [productos, setProductos] = useState([]);
 //const [pagina, setPagina] = useState(1);
@@ -31,28 +32,27 @@ const getProductos = async () => {
 };
 useEffect(() => {
     getProductos();
-}, [productos]);
+}, []);
     
 
     return (
         <>
-             <Header />                
-                <NavSide /> 
-              
-                        <div className="contenedor">
-                        <div className="aplicacion">
+                           
+                    <div className="contenedor">
+                    <div className="aplicacion">
                     <div className="principal">
         
                     <main>
-            {productos.map((item, i) => (
-                <Producto key={i} item={item} anadirACarrito={anadirACarrito} />
-            ))}
-         </main>
-                </div>
-                </div>
-                </div>
+            
+                          {miprop.map((item, i) => (
+                        <Producto key={i} item={item} />
+                        ))}
+                    </main>
+                    </div>
+                    </div>
+                    </div>
                
-                <Footer />     
+              
                 
         </>  
     );              
