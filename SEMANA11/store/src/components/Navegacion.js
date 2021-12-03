@@ -88,6 +88,8 @@ export default function Navegacion() {
                             >
                                 <NavDropdown.Item onClick={signOut}>Salir</NavDropdown.Item>
                             </NavDropdown>
+                        
+                        
                         ) : (
                             <Link className="nav-link" to="/login">
                                 Ingresar

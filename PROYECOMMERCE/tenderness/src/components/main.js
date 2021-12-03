@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from "react";
-import { obtenerProductos } from "../services/productosServices";
+
 import Producto from "./producto";
 
 
@@ -13,34 +13,21 @@ import Producto from "./producto";
 
 export default function Main( {miprop}) {
    
-   
-console.log(miprop);
+  
     //cuando utilizemos hooks tienen que estar dentro del componente
-    
-const [productos, setProductos] = useState([]);
-//const [pagina, setPagina] = useState(1);
-//const [limite, setLimite] = useState(6);
 
-const getProductos = async () => {
-    try {
-        const prodObtenidos = await obtenerProductos();
-         setProductos(prodObtenidos);
-        //setProductos([...productos, ...prodObtenidos]);
-    } catch (error) {
-        console.log(error);
-    }
-};
-useEffect(() => {
-    getProductos();
-}, []);
-    
 
+       
+    
     return (
+
+        
+
         <>
-                           
+                       
                     <div className="contenedor">
-                    <div className="aplicacion">
-                    <div className="principal">
+                   
+                        <div className="principal">
         
                     <main>
             
@@ -48,11 +35,22 @@ useEffect(() => {
                         <Producto key={i} item={item} />
                         ))}
                     </main>
+                   
                     </div>
+             
                     </div>
-                    </div>
+                    < div className="d-flex justify-content-center">
+              {/*  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                        setPagina(pagina + 1);
+                    }}
+                >
+                    Ver más...
+                </button>*/}
+            </div>
                
-              
+                
                 
         </>  
     );              

@@ -78,11 +78,20 @@ const eliminarProducto2  = async (id) => {
         throw error;
     }
 }
+const ObtenerProductosPorPagina = async (pagina =1, limite = 6 ) =>{
+    try {
+        
+        let { data } = await axios.get(`${URL}?page=${pagina}&limit=${limite}`);
+        
+        return data;
+    } catch (error) {
+        throw error;
+    }
+    }
+    const subirImagen = (imagen) =>{
 
-const subirImagen = (imagen) =>{
-
-    console.log(imagen);
-    return new Promise ((resolve,reject) => {
+        console.log(imagen);
+        return new Promise ((resolve,reject) => {
         let refStorage  = storage.ref(`foto/${imagen.name}`)
         let tareaSubir  = refStorage.put(imagen)
             
@@ -103,5 +112,5 @@ const subirImagen = (imagen) =>{
     });
 };
 
-export { obtenerProductos, crearProducto, obtenerProductoPorId, editarProductoPorId, eliminarProducto, eliminarProducto2 , subirImagen};
+export { obtenerProductos,ObtenerProductosPorPagina, crearProducto, obtenerProductoPorId, editarProductoPorId, eliminarProducto, eliminarProducto2 , subirImagen};
          

@@ -33,7 +33,7 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
     
     return (
         <div>
-            <h1> Mantenimiento de Productos</h1>
+            <h1> MANTENIMIENTO DE PRODUCTOS</h1>
             <br />
 
             <form onSubmit = {(e) => {manejarSubmit(e)}}>
@@ -65,7 +65,7 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
                      <label className = "form-label labelalinear">                         
                        Imagen
                      </label> 
-                     <input type="file" className = "cajastextonombre" ref = {inputfile} onChange ={(e) =>{manejarImagen(e)}}  />
+                     <input type="file" className = "cajastextonombre" ref = {inputfile} onChange ={(e) => {manejarImagen(e)} }  />
                  </div>
 
                  <div className = "mb-3">

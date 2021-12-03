@@ -13,14 +13,17 @@ export default function OperacionesView() {
                        
                     <div className = "contenedoroperaciones" >
                        
-                        <Link to ="/" className = "btn btn-primary">
+                        <Link to ="/ListarPedidos" className = "btn btn-primary">
                          PEDIDOS
                         </Link>
                        <button className = "btn btn-primary btnoperaciones">CLIENTES </button>
                        <Link to ="/crearProducto" className = "btn btn-primary">
                          PRODUCTOS
                         </Link>
-                       <button className = "btn btn-primary btnoperaciones">CATEGORIAS </button>
+                       
+                        <Link to ="/crearCategoria" className = "btn btn-primary">
+                         CATEGORIAS
+                        </Link>
                     </div>
             </div>
         </div>

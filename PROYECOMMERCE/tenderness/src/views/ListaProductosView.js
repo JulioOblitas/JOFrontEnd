@@ -26,6 +26,8 @@ export default function ListaProductosView() {
             console.log(error);
             
         }
+
+        
     };
 
 
@@ -46,7 +48,8 @@ export default function ListaProductosView() {
 
                     await Swal.fire({
                         icon : "success",
-                        title : "Eliminado  producto",
+                        title : "Producto Eliminado",
+                        text :  "Accion de Eliminar Producto"
                     })
 
                     getProductos();
@@ -57,7 +60,6 @@ export default function ListaProductosView() {
             }
 
     };
-    
    
     const getMostraCategorias = (idCategoria) => {
 
@@ -66,8 +68,6 @@ export default function ListaProductosView() {
         const catfiltrados = categorias.filter((categ) => categ.id == idCategoria)    
            {
            
-
-
             { catfiltrados.map((cat, i) => (                
                 descrip = cat.nombre                
             ))}
@@ -75,15 +75,10 @@ export default function ListaProductosView() {
         }
   
         return (
-                
-                            
-                    <td>{descrip}</td>
-       
-         
+                                            
+                    <td>{descrip}</td>       
         )
 
-       
-           
     };
     
    
@@ -115,39 +110,38 @@ export default function ListaProductosView() {
 
                 </thead>
                 <tbody>
-                   
-                    
-                    {productos.map(({nombre,descripcion,precio,id,categoria_id,estado}, i) => (
-                        
-                        
-                        <tr key ={i}>
-                        
-                        { /*ejemplo de if ternario
+                { /*ejemplo de if ternario
                             { (id==1) ? (
                                    <td>{`hola`} </td>
                         ) : (
                             <td>{`hola2`} </td>
                         )}
                         */}
-                         
-                         
+                    {
+                    
+                    
+                    
+                    
+                    }
+                    {productos.map(({nombre,descripcion,precio,id,categoria_id,estado}, i) => (
+                        
+                        
+                        <tr key ={i}>                                                 
                             {getMostraCategorias(categoria_id)}          
                                                                                            
                             <td>{nombre} {id}</td>
                             <td>{descripcion}</td>
-                            <td>{precio}</td>
+                            <td>{(precio*1).toFixed(2)}</td>
+                            
+                            
                             <td>
-                                <Link className= "btn btn-info me-2" to ={`/editarproducto/${id}`}> Editar </Link>
+                                <Link className= "btn btn-info me-2" to ={`/editarproducto/${id}`}>  <i className="fas fa-edit"></i>   </Link>
                             </td>
                             <td>
                                 <button className = "btn btn-danger"                                 
                                 onClick={() => {verificarEliminar(id)}}
-                                > Eliminar </button>
+                                >  <i className="fas fa-eraser"></i>  </button>
                             </td>
-
-                            
-                               
-
                         </tr>
 
                     ))}

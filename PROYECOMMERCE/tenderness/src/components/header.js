@@ -1,5 +1,5 @@
 
-import { useContext, useRef , useState, useEffect } from "react";
+import   { useContext, useRef , useState, useEffect } from "react";
 import { AuthContext } from "../context/AuthContext";
 
 import { Navbar, Container, Nav, NavLink, NavDropdown } from "react-bootstrap";
@@ -11,27 +11,34 @@ import imgInstagram from "../imagenes/instagram.png"
 import imgLogoEmpresa from "../imagenes/logoemp.png"
 import imgLogoBuscar from "../imagenes/buscando.png"
 
-
+import { CarritoContext } from "../context/carritoContext";
 import { Link, useNavigate } from "react-router-dom";
+import Badge from "@mui/material/Badge";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
+
+
+
+
 
 import CheckOutView from  "../views/ChekOutView"
 import PrivateRoute from  "../components/PrivateRoute"
-import { alertTitleClasses, getAlertUtilityClass } from "../../../../SEMANA11/store/node_modules/@mui/material";
 import CrearProductosView from "../views/CrearProductosView";
+
 import { obtenerCategorias } from "../services/categoriasServices";
+import { obtenerProductos , ObtenerProductosPorPagina  } from "../services/productosServices";
 import Main from "../components/main";
+import { style } from "@mui/system";
 
-
-
-
-import { obtenerProductos } from "../services/productosServices";
 
 
 export default function Header() {
 
+    
+
     const { user, signOut } = useContext(AuthContext);
     const { signIn } = useContext(AuthContext);
-    
+    const { carrito } = useContext(CarritoContext);
     const [buscar, setBuscar] = useState('');  
    
     const [categorias, setCategorias] = useState([]);
@@ -39,17 +46,32 @@ export default function Header() {
     const [productos, setProductos] = useState([]);
     const [productosOriginal,  setProductosOriginal] = useState([]); //nunca lo modifico
     
-   
+    
+    
+
+ 
+    
+    
+
+
+    const totalCarrito = carrito.reduce((total, prod) => {
+        return total + prod.cantidad;
+    }, 0);
+
     
     const getData = async () => {
         try {
             
             const catObtenidas = await obtenerCategorias();
             const prodObtenidos = await obtenerProductos();
+            
+            //const prodObtenidos = await ObtenerProductosPorPagina(pagina, limite);
+            setProductos([...productos, ...prodObtenidos]);
+            
             setCategorias(catObtenidas);            
             setCategoriasOriginal(catObtenidas);
-            setProductos(prodObtenidos)
-            setProductosOriginal(prodObtenidos);
+            //setProductos(prodObtenidos)
+            setProductosOriginal(prodObtenidos);    
         } catch (error) {
             console.log(error); //Swal icon:"error"
         }
@@ -57,8 +79,12 @@ export default function Header() {
 
     const BuscarPorCategoria  =  () =>{
         
-       let idcat; 
-        const catFiltrados = categoriasOriginal.filter((cat) => cat.nombre === buscar);
+       
+        let idcat; 
+        
+
+        
+        const catFiltrados = categoriasOriginal.filter((cat) => cat.nombre === buscar.toUpperCase());
         setCategorias(catFiltrados); 
         { catFiltrados.map((cat, i) => (                
             idcat =  cat.id
@@ -79,17 +105,14 @@ export default function Header() {
          setProductos(prodFiltrados); 
              
      }
-     const navigate = useNavigate();
-const manejarBusqueda = () => {
-
-       
-    //*navigate(`/productosfiltros/${refBuscar.current.value}`);
-    navigate(`/operaciones`);
-};
-
- 
+   
+     
 
     useEffect(() => {
+     
+
+
+        
         getData();
     }, []);
 
@@ -97,17 +120,19 @@ const manejarBusqueda = () => {
        <>    
         <header>
          <div className = "contenedorheader" >
-
-        
+         
             <div className = "Email">
                 <img  className = "imglogocabecera"  src= {imgEmail}  alt=""/>
                 <h6 className = "h6Email">EMAIL</h6>
             </div>
 
             <div className = "Telefono">
+              
                 <img  className = "imglogocabecera"  src= {imgTelefono}  alt=""/>
+                <h6 className = "h6Email">934586160</h6>
             
-                <h6 className = "h6Telefono">934586160</h6>
+                
+                
             </div>
         
             <div className = "RedesSociales">
@@ -120,13 +145,20 @@ const manejarBusqueda = () => {
 
             <div className= "contenedor2" >
                 <div className = "Logo">
-                    <img  className = "imglogoempresa"  src= {imgLogoEmpresa}  alt=""/>                        
+                    <img   className = "imglogoempresa imglogoefecto"  src= {imgLogoEmpresa}  alt=""/>                        
                 </div>
 
                 <div className = "Buscar">
-                    <input className = "txtbuscar" value = {buscar} onChange={e => setBuscar(e.target.value)}  type="text" placeholder = "Tenderness siempre contigo.. buscalo" />
+                    <input className = "txtbuscar" value = {buscar}   onChange={e => setBuscar(e.target.value)}  type="text" placeholder = "Tenderness siempre contigo.. buscalo" />
                    
                    <a href = "#"> <img  className = "imgbuscar"  onClick={() => { BuscarPorCategoria()}} src= {imgLogoBuscar}  alt=""/>  </a>
+                   <Link className="nav-link" to="/carrito">
+                            {/*<Badge badgeContent={totalCarrito} color="primary">*/}
+                            <Badge   badgeContent={totalCarrito} color="primary">
+                                <ShoppingCartIcon />
+                            </Badge>
+                        </Link>
+
                    
                    {/*<a href = "#"> <img  className = "imgbuscar"   onClick={() => { filtrarPorCategoria(cat.id);}} src= {imgLogoBuscar}  alt=""/>  </a>*/}
                    
@@ -136,47 +168,44 @@ const manejarBusqueda = () => {
                         ACCESO
                     </Link>*/}
 
+                </div>
+                <div  className="divusuario">
 
                      {user ? (
-                            <NavDropdown
-                                title={
-                                    <div className="d-inline">
-                                        <img
-                                            src={user.photoURL}
-                                            className="me-2"
-                                            alt="avatar"
-                                            style={{ borderRadius: "50%", width: "30px" }}
-                                        />
-                                        <span>{user.displayName}</span>
-                                    </div>
-                                }
-                            >
-                                {/*<Link to = "/crearProducto" className = "btn btn-primary ">
-                                    OPERACIONES
-                                </Link>*/}
-                                
-                                
-                                   {/* <Link to = "/operaciones" className = "btn btn-primary btnoperacion">*/}
+                           <NavDropdown 
+                             title={
+                               <div className="d-inline navmenudropdown"   >
+                                   <img
+                                       src={user.photoURL}
+                                     
+                                       
 
-                                <Link to = "/operaciones"   className = "btn btn-primary btnoperacion">
-                                   
-                                   {/* <NavDropdown.Item>  
-                                    </NavDropdown.Item>*/}
+                                       alt="avatar"
+                                       style={{ borderRadius: "50%", width: "30px" }}
+                                   />
+                                   <span style={{ color: "white"}}>{user.displayName}</span>
+                               </div>
+                                 }
+                       >
+                           
+                               
+                                <Link  to = "/operaciones" className = "btn btn-primary btnoperacion">
+                                  
                                         OPERACIONES    
                                     </Link> 
                                 
                                 
-                                <NavDropdown.Item   onClick = {signOut} >SALIR</NavDropdown.Item>
-                                
+                                <NavDropdown.Item   className = "btn btn-primary btnoperacion" onClick = {signOut} >SALIR</NavDropdown.Item>
+                             
                             </NavDropdown>
                         ) : (
                             <Link className="nav-link" to="/" onClick = {signIn} >
-                                Ingresar
+                                INGRESAR
                             </Link>
                         )}
                 
+                
                 </div>
-
             </div>
           
             
@@ -185,7 +214,7 @@ const manejarBusqueda = () => {
         <Navbar bg="primary" variant="dark">
     <Container>
     
-                
+    <Navbar.Brand href="/#home" onClick= {() =>{  setProductos(productosOriginal)}}>   INICIO</Navbar.Brand>
     <Navbar.Brand href="#home" onClick= {() =>{  setProductos(productosOriginal)}}>   TODOS</Navbar.Brand>
       <Nav className="me-auto">
       <Nav.Link href="#polos"  onClick ={() => BuscarPorCategoriaNavBar(1)}>POLOS</Nav.Link>
@@ -201,9 +230,10 @@ const manejarBusqueda = () => {
             
              {   <Routes>
                 
-                          <Route  path = "/" element = { <Main  miprop={productos} />} />
+                          <Route  path = "/" element = { <Main  miprop={productos}  />} />
+                          
              </Routes>}
-      
+           
          </>   
     )
     

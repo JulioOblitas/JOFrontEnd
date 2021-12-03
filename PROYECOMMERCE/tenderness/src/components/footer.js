@@ -25,9 +25,9 @@ export default function footer() {
             </div>
 
             <div className= "contenedorimagenpie">
-                <img  className = "imgfooter"  src= {imgLogoUbicacion}  alt=""/>
-                <img className = "imgfooter"  src= {imgLogoEmpresa}  alt=""/>
-                <img  className = "imgfooter"  src= {imgLogoLibroReclam}  alt=""/>
+                
+                <img className = "imgfooter imglogoefecto"  src= {imgLogoEmpresa}  alt=""/>
+                <img  className = "imgreclamacion"  src= {imgLogoLibroReclam}  alt=""/>
                 
             
             </div>                   

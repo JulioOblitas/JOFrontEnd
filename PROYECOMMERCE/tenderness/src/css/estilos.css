@@ -6,7 +6,7 @@
 
    }   
    
-  h6{
+  h6, colora {
     margin-right: 10px;  
     width: 80px;
       font-weight: bold;
@@ -29,6 +29,8 @@
     width: 50px;
    
  }
+
+ 
 
  .imglogoempresa{
     height: 120px;
@@ -67,7 +69,9 @@
 }
 
  header {
- background-color:crimson; 
+ 
+    background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
+    
 }
 
 .contenedor2{
@@ -93,15 +97,15 @@
 
 
 .txtbuscar{
-  width: 740px;  
-  height: 50px; 
-  font-size: medium;
+  width: 450px;  
+  height: 40px; 
+  font-size:small;
   margin-left: -15px; 
   border-radius: 15px;
-  border-style: double;
+  border-style:none;
   border-color:red;
-  color:crimson;
-  font-weight: bold;
+  color:#7cc1b8;
+    font-weight: bold;
   font-size: x-large;
   
 
@@ -119,13 +123,20 @@
 .contenedorpie{
      display: flex;
     height: 200px;     
-    background-color:crimson;     
+    
+    background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
 }
 
 .imgfooter{
     height: 150px;
     width: 150px;    
  }
+
+ .imgreclamacion{
+    height: 80px;
+    width: 100px;    
+ }
+
  .contenedorimagenpie{
      display: flex;
      width: 600px;
@@ -139,12 +150,7 @@
 .contenedor {
     display: flex;
     height: 100%;
-}
 
-.aplicacion {
-    width: 80%;
-    height: 100%;
-    background-color: #f5f5f6;
 }
 
 p {
@@ -156,16 +162,18 @@ p {
 .principal {
     display: flex;
     height: 90%;
+
 }
 
 
 main {
+    
     height: 100%;
-    width: 80%;
+    width: 100%;
     /* trabaja en 2 dimensiones */
     display: grid;
     /* cuantas columnas quiero, explicito*/
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     /* No se exactamente cuantas filas tendre, implicito */
     grid-auto-rows: 400px;
     padding: 20px;
@@ -178,14 +186,25 @@ main {
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 0 10px gray;
+    
 }
 
 .img-top {
     width: 100%;
     border-radius: 5px;
-    height: 50%;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    position: relative;
+
 }
 
+  
+  .img-top:hover {
+    transform: scale(1.15);
+    transition: all 0.6s;
+  }
+  
 .text-bottom {
     padding: 10px;
     display: flex;
@@ -236,6 +255,27 @@ main {
 		
 		
 }
+.title-product {
+    color: white;
+    position: relative;
+  }
+  
+  .title-product:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.65) 100%);
+  }
+
+
+.divusuario{
+    margin-left: 270px;
+    margin-top: 60px;
+    
+}
 
 .cajastextonombre {
     width : 330px;
@@ -261,3 +301,51 @@ main {
     margin-left: 550px;
     margin-top: -300px;
 }
+
+.portada{
+
+        height: 180px;
+    width: 210px;
+    margin-left: 800px;
+    margin-top: -200px;
+
+    
+}
+
+.imagenportada{
+    width: 200px;
+    height: 180px;
+    border-radius: 5px;
+    
+}
+
+.colorletra{    
+      color: rgb(14, 143, 218);
+}
+.btnmargen{
+    margin-left: 112px;
+}
+
+.colorletraoc{
+    color: black;
+}
+
+.btncompraroc {
+    margin-left: -165px ;
+ margin-top: -660px ;
+}
+
+
+@keyframes rotate {from {transform: rotate(0deg);}
+    to {transform: rotate(90deg);}}
+@-webkit-keyframes rotate {from {-webkit-transform: rotate(0deg);}
+  to {-webkit-transform: rotate(90deg);}}
+
+  .imglogoefecto{
+    -webkit-animation: 3s rotate linear infinite;
+    animation: 3s rotate linear infinite;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+}
+
+

@@ -3,7 +3,7 @@ import { subirImagen} from "../services/productosServices"
 import { crearCategoria } from "../services/categoriasServices"
 import { useNavigate } from "react-router";
 import Swal from "sweetalert2"
-
+import { Link } from "react-router-dom"
 let imagen;
 
 
@@ -43,13 +43,18 @@ export default function CrearCategoriasView() {
     }
 
     const manejarImagen = (e) =>{
-        e.preventDefault();
-            imagen = e.target.files[0];
+  
+
+    e.preventDefault();
+
+    imagen = e.target.files[0];
+
+    
     }
 
     return (
         <div>
-            <h1 className = "mb-3">Crear Nueva Categoria</h1>
+            <h1 className = "mb-3">CATEGORIAS</h1>
             
             <form 
              onSubmit ={(e)=>{manejarSubmit(e)}} >
@@ -67,12 +72,18 @@ export default function CrearCategoriasView() {
                 </div>
 
                 <div className = "mb-3">
-                    <label className= "form-label">Imagen Categoria</label>
-                    <input type = "file" className= "form-control" onChange= {(e) => {manejarImagen(e)}}/>
+                    <label className= "form-label">Imagen</label>
+                    <input type = "file" className= "form-control"  onChange= {(e) => {manejarImagen(e)}}/>
+                    
                 </div>
 
-                <button className = "btn btn-primary" type = "submit"> Guardar </button>
+                
 
+                <button className = "btn btn-primary" type = "submit"> Guardar </button>
+                         <Link to ="/ListarCategoria" className = "btn btn-primary">
+                         LISTAR - ACTUALIZAR - ELIMINAR  CATEGORIAS
+                        </Link>
+           
             </form>
         </div>
     );
