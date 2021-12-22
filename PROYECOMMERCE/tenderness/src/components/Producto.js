@@ -10,23 +10,26 @@ export default function Producto({ item } ) {
 
    
        <div className="producto">
-       <img className="img-top" src={imagen} alt={nombre} />
-       <div className="text-bottom">
+           
+       <Link className="card mb-3" to={`/detalleproducto/${id}`}>
+            <img className="card-img-top" src={imagen} alt={nombre} />
+                 <div className="card-body text-bottom">    
          
-            <p className = "colorletra" >{descripcion}</p>
-            <div className="prod-info">
-                <p className = "colorletra" >S/ {(precio * 1).toFixed(2)}</p>
-                <Link className="card mb-3" to={`/detalleproducto/${id}`}>
-                <button className="btn btn-primary ">
-                <i class="fas fa-cart-plus"></i>
-                   
-                </button>
-                </Link>
+                        <p className = "card-title" >{descripcion}</p>                    
+                        <p className = "card-title" >S/ {(precio * 1).toFixed(2)}</p>
+                        <i className="fas fa-cart-plus"></i>
+                    
+            </div>     
+        </Link>
         
-       </div>
-       </div>
-       </div>
-   
+         </div>       
+        
+        
+        
+       
+      
+       
+    
     
     );
 }

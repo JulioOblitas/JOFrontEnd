@@ -15,15 +15,10 @@
       font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   }
 
-  
- .contenedorheader{
-    
+ 
+     
 
-    display: flex; 
-    align-items: center;
-    
-    
- }  
+   
 .imglogocabecera, .imgbuscar{
     height: 50px;
     width: 50px;
@@ -69,15 +64,21 @@
 }
 
  header {
- 
+  
     background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
-    
-}
+    position: fixed;
+ }
 
-.contenedor2{
-    display: flex;
+ .contenedorredessociales{    
+    display: flex; 
+    align-items: center;
     
-    height: 125px;
+ }
+
+
+ .contenedorbusqueda{
+    display: flex;    
+    height: 80px;
 }
 
 .Logo{
@@ -91,7 +92,7 @@
     margin-left: 150px; 
     display:flex;
     height: 100px;
-    margin-top: 70px;
+    margin-top: 30px;
     
 }
 
@@ -121,7 +122,8 @@
 }
 
 .contenedorpie{
-     display: flex;
+    display: flex;
+  
     height: 200px;     
     
     background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
@@ -146,28 +148,87 @@
         justify-content: space-between;
        
  }
-
-.contenedor {
-    display: flex;
-    height: 100%;
-
-}
-
-p {
+ p {
     color: #f5f5f6;
     font-weight: bold;
 
 }
+.contenedor {
+    display: flex;
+    height: 100%;
+    /*background-color: rgb(219, 237, 240);*/
+    background-color: red;
+
+   /* background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);*/
+    flex-direction: column;
+}
+
+.contenedorcarousel{
+ 
+    Height: 300px;
+    margin-left: 0; 
+    margin-top: 170px;
+    
+    display: flex;
+    width: 1341px;
+     position: relative;
+    background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
+    justify-content: center;
+}
 
 .principal {
     display: flex;
-    height: 90%;
+    height: 100%;
+    margin-left: 0;  
+    margin-top: 10px;
+}
 
+
+.principaloperaciones{
+    
+    height: 800px;
+    margin-top: 200px;
+   
+    width: 1341px;
+    background-image: radial-gradient(circle at 48.68% 65.04%, #dde7db 0, #d4e3d5 7.14%, #c8decf 14.29%, #b9d8c8 21.43%, #a8d1c2 28.57%, #94cabd 35.71%, #7cc1b8 42.86%, #60b8b4 50%, #3caeb2 57.14%, #00a5b2 64.29%, #009db3 71.43%, #0095b6 78.57%, #008db9 85.71%, #0087bc 92.86%, #0080bf 100%);
+
+    display: flex;
+    justify-content: center;
+    position: fixed;
+}   
+
+.principaloperacionesboton{
+        
+        height: 100px;
+        display: flex;
+        position: absolute;
+        width: 700px;
+        margin-left: 320px;
+        margin-top: 300px;
+        justify-content: center;
+        
+}   
+
+
+.btnoperacionusuario{    
+		width:  95%;
+        height: 35%;
+        color:blue;        
+       
+}
+
+.principalcategorias{
+    margin-top: 250px;
+    height: 800px;
+
+    width: 1341px;
+    justify-content: center;
+    background-color: rgb(219, 237, 240);
 }
 
 
 main {
-    
+
     height: 100%;
     width: 100%;
     /* trabaja en 2 dimensiones */
@@ -179,13 +240,22 @@ main {
     padding: 20px;
     /* separación entre elementos de grid */
     gap: 10px;
+    background-color: blueviolet;
+    
+    margin-top: 162px;
+    position: fixed;
+    overflow: scroll;
+    
 }
+
 
 .producto {
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     box-shadow: 0 0 10px gray;
+    background-color: chartreuse;
+   height: 100%;
     
 }
 
@@ -193,18 +263,20 @@ main {
     width: 100%;
     border-radius: 5px;
     height: 100%;
-    object-fit: cover;
+    object-fit:cover;
     overflow: hidden;
-    position: relative;
+  
+  
 
 }
 
+/*para formato svg
+.img-top:hover {
+   /* transform: scale(1.15);*/
+    /*transition: all 0.6s;
+  }*/
   
-  .img-top:hover {
-    transform: scale(1.15);
-    transition: all 0.6s;
-  }
-  
+ 
 .text-bottom {
     padding: 10px;
     display: flex;
@@ -235,26 +307,7 @@ main {
     font-weight: bold;
 }
 
-.contenedoroperaciones{
-        
-    background-color:azure;
-        border-radius: 30px;
-    height: 60px;
-    width: 800px;
-    display:flexbox;
-    padding-top: 10px;
-    margin-top: 5px;
-    margin-left: 180px;
-    align-content: center; 
-    justify-content: space-between;
-}
 
-.btnoperaciones{
-    
-		width:15%;
-		
-		
-}
 .title-product {
     color: white;
     position: relative;
@@ -273,7 +326,10 @@ main {
 
 .divusuario{
     margin-left: 270px;
-    margin-top: 60px;
+    margin-top: -5px;
+    
+
+    
     
 }
 
@@ -320,7 +376,7 @@ main {
 }
 
 .colorletra{    
-      color: rgb(14, 143, 218);
+      color: rgb(3, 26, 124);
 }
 .btnmargen{
     margin-left: 112px;
@@ -348,4 +404,43 @@ main {
     transform-origin: 50% 50%;
 }
 
+
+.posnavbar{
+    height: 40px;
+}
+
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  
+  background-size: 100%, 100%;
+   border-radius: 50%;
+  /* border: 1px solid black;*/
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  
+ 
+  color:red;
+  margin-left: 100px;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color:red;
+  margin-right: 150px;
+ 
+}
+
+.carouselitem{
+    margin-top: 1px;
+
+}
 

@@ -2,11 +2,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./css/estilos.css";
 import "./App.css";
 import { AuthContextProvider } from "./context/AuthContext";
-import Header from "../src/components/Header"
+import Header from  "./components/Header";
 import CarritoContextProvider from "./context/carritoContext";
 
 
-import Footer from "../src/components/footer"
+
 import  {BrowserRouter as  Router, Routes, Route } from "react-router-dom";
 import CrearProductosView from './views/CrearProductosView';
 import CrearCategorias2View from  './views/CrearCategorias2View';
@@ -20,7 +20,7 @@ import CarritoView from  "./views/CarritoView";
 import CheckOutView from "./views/ChekOutView";
 import PrivateRoute from "./components/PrivateRoute";
 import ListaPedidosView from "./views/ListaPedidosView";
-import React, { useRef } from "react";
+
 
 
 export default function App() {
@@ -30,8 +30,9 @@ export default function App() {
             <AuthContextProvider>
             <CarritoContextProvider>
                     <Router>                    
-                    <Header /> 
-                    
+
+                    <Header />
+                 
                     <Routes>
                     <Route path="/detalleproducto/:id" element={<ProductoDetalleView   />} />
                     <Route path = "/carrito"       element={<CarritoView  />}/>
@@ -44,6 +45,7 @@ export default function App() {
                     <Route path = "/ListarCategoria" element ={<ListaCategoriasView  />}/>                                             
                     <Route path = "/ListarPedidos" element ={<ListaPedidosView   />}/>                                             
                     
+                    
                      {/**Ruta privadas*/}
                      <Route
                         path="/checkout"
@@ -53,9 +55,10 @@ export default function App() {
                             </PrivateRoute>
                         }
                     />
+                       
                     </Routes>
-                    <Footer />     
-
+                    
+                  
 
                 </Router>
                 </CarritoContextProvider>

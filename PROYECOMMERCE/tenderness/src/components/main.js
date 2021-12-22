@@ -1,12 +1,16 @@
 
 import { useState, useEffect } from "react";
 
-import Producto from "./producto";
+import Producto from "./Producto";
+
+
 
 
 //<Main lista={listaPlatillos} />
 //llamo a la f Main
 //Main({lista})
+
+import HeaderCarousel from "./HeaderCarousel";
 
 
 
@@ -24,33 +28,25 @@ export default function Main( {miprop}) {
         
 
         <>
-                       
+          
+<div>
+
+</div>  
                     <div className="contenedor">
+                    
+                   <div className="principal">
                    
-                        <div className="principal">
-        
-                    <main>
+                  {  <main>
             
                           {miprop.map((item, i) => (
-                        <Producto key={i} item={item} />
+                                 <Producto key={i} item={item} />
                         ))}
-                    </main>
+                    </main>}
                    
                     </div>
              
                     </div>
-                    < div className="d-flex justify-content-center">
-              {/*  <button
-                    className="btn btn-primary"
-                    onClick={() => {
-                        setPagina(pagina + 1);
-                    }}
-                >
-                    Ver más...
-                </button>*/}
-            </div>
-               
-                
+            
                 
         </>  
     );              

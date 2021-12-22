@@ -1,0 +1,29 @@
+.modal{
+    background-color: tomato;
+    width: 100vw;
+    height: 100wv;
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+    z-index: 9999;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+    .modal_dialog{
+        background-color: blanchedalmond;
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+    }
+.modal-open {
+    display: flex;
+    
+}
+
+.botonpublicidad{
+    background-color: red;
+    color: aliceblue;
+}

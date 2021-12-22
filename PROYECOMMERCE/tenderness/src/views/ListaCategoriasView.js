@@ -64,8 +64,14 @@ export default function ListaCategoriasView() {
             {loading ? (
                 <Cargando />
             ) : (
-                <>
-                 <h1 className = "mb-3">LISTADO DE CATEGORIAS</h1>
+                
+                <div className = "contenedor"> 
+            
+                <div className="principalcategorias">
+
+                
+                <h1 className = "mb-3">LISTADO DE CATEGORIAS</h1>
+        
 
                  
 
@@ -99,8 +105,10 @@ export default function ListaCategoriasView() {
                            
                  </tbody>
                  </table>
-            </> 
-                
+                 
+                 </div>
+
+                 </div>
             )}
             </>
     

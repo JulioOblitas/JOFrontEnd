@@ -7,9 +7,10 @@
 }   
 
 header{
-
+    margin-top: 0;
     background-image: linear-gradient(45deg,#3dada4,#c71fe6);
     color: white;
+    display: flexbox;
 }
 .contenedor{
     max-width: 900px;

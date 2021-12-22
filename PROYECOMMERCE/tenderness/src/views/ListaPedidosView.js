@@ -26,7 +26,18 @@ export default function ListaPedidosView() {
 
     ;
    
-   
+    const MensajeNoDisponible =  async() => {
+        
+  
+     const rpta  = await Swal.fire({
+        icon : 'success',
+        title : 'Aviso al Usuario',
+        text : 'Opcion en Construccion',
+        
+});
+    }
+
+
     const verificarEliminar = async(id) => {
         const rpta  = await Swal.fire({
         icon : 'success',
@@ -70,6 +81,8 @@ export default function ListaPedidosView() {
                 <Cargando />
             ) : (
                 <>
+                 <div className = "contenedor">
+                 <div className="principalcategorias">
                  <h1 className = "mb-3">LISTADO DE PEDIDOS</h1>
 
                  
@@ -86,6 +99,7 @@ export default function ListaPedidosView() {
                          <th>DIRECCION</th>
                          <th>VISUALIZAR</th>
                          <th>ELIMINAR</th>
+                         <th>EMITIR COMPROBANTE</th>
                      </tr>
 
                  </thead>
@@ -101,11 +115,18 @@ export default function ListaPedidosView() {
                                  <td>{ped.direccion} </td>
 
                                  <td>
-                                 <Link  className= "btn btn-info me-2" to ={`/editarcategoria/${ped.id}`}>  <i className="fas fa-search"></i> </Link>
+                                    {/*<Link  className= "btn btn-info me-2" to ={`/editarcategoria/${ped.id}`}>  <i className="fas fa-search"></i> </Link>*/}
+                                    
+                                    <button className = "btn btn-info" onClick={() => {MensajeNoDisponible()}}>  <i className="fas fa-search"></i>  </button> 
+                                
+                                      {/*<Link className= "btn btn-info" to ={`/Publicidad`}>  <i className="fas fa-search"></i>   </Link>*/}
                                  </td>                                                    
                                  <td>
                                     <button className = "btn btn-danger" onClick={() => {verificarEliminar(ped.id)}}>  <i className="fas fa-eraser"></i>  </button>
-                                </td>                                                    
+                                </td>        
+                                <td>
+                                    <button className = "btn btn-primary" onClick={() => {MensajeNoDisponible()}}>  <i className="fas fa-file-invoice"></i>  </button>
+                                </td>                                             
                              </tr>                         
                          ))                         
                      }
@@ -113,6 +134,8 @@ export default function ListaPedidosView() {
                            
                  </tbody>
                  </table>
+                 </div>
+                 </div>
             </> 
                 
             )}

@@ -67,8 +67,9 @@ const getCategorias = async() =>{
              
         
         
-        <div>
-               
+        <div className = "contenedor">
+               <div className = "principalcategorias">
+
                
             {/*console.log({valueotro})*/}
             
@@ -115,13 +116,8 @@ const getCategorias = async() =>{
                     </Link>
                             
             </form>
-
-                   
-           
-                        
-                        
-                        
-                               
-                                </div>
+                
+            </div>
+          </div>
     )
 }

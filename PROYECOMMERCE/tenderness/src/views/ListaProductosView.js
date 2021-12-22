@@ -35,7 +35,7 @@ export default function ListaProductosView() {
             const rpta  = await Swal.fire({
             icon : 'success',
             title : 'Desea Eliminar el producto',
-            text : 'Esta accion es irreversible',
+            text : 'Cuidado accion es irreversible!!',
             showConfirmButton: true,
             showDenyButton:true,
             confirmButtonText:"Si, Eliminar",

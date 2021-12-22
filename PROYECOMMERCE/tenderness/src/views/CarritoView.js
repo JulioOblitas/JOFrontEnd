@@ -60,7 +60,7 @@ export default function CarritoView() {
                          
                           {carrito.map((prod, i) => (
                               <tr key={i}>
-                                  <td>{prod.nombre}</td>
+                                  <td>{prod.descripcion}</td>
                                   <td>{(prod.precio * 1).toFixed(2)}</td>
                                   <td >{prod.cantidad}</td>
                                   <td  >{(prod.precio * prod.cantidad * 1).toFixed(2)}</td>

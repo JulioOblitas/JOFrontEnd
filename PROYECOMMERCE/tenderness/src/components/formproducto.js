@@ -5,7 +5,7 @@ import { obtenerProductos  } from "../services/productosServices";
 import { Link } from "react-router-dom"
 
 
-export default function FormProducto({ value, actualizarInput, manejarSubmit, manejarImagen, categorias }) {
+export default function FormProducto({ value, actualizarInput, manejarSubmit, manejarImagen, categorias,valueotro }) {
 
   const [productos, setProductos] = useState([])  
 
@@ -32,7 +32,9 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
   const inputfile  = useRef();
     
     return (
-        <div>
+        
+            <div className = "contenedor">
+               <div className = "principalcategorias">
             <h1> MANTENIMIENTO DE PRODUCTOS</h1>
             <br />
 
@@ -88,7 +90,10 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
                      
                      
                  </div>
-
+                    <div className = "mb-3 portada">
+                         
+                         <img src = {valueotro} className ="imagenportada"/>
+                    </div>  
 
                  <button className = "btn btn-primary me-2 labelalinear" type = "submit">GUARDAR</button>
                  
@@ -98,6 +103,7 @@ export default function FormProducto({ value, actualizarInput, manejarSubmit, ma
            
                  
             </form>
+            </div>
         </div>
     )
 }

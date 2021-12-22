@@ -10,9 +10,9 @@ import { obtenerCategorias } from "../services/categoriasServices";
 
 
 let imagen;  //variable global no definida
-
+let imageUrl;
 export default function CrearProductosView() {
-    
+    const [valueotro, SetValueotro] = useState(null);
     const [value, SetValue] = useState( {
         nombre : '',
         descripcion : '',
@@ -44,7 +44,7 @@ const manejarSubmit = async(e) =>{
     SetLoading(false);
     await Swal.fire({
         icon:'success',
-        title:'exito',
+        title:'Aviso al usuario',
         text: 'Producto Creado',
         showConfirmButton:false,
         timer: 2000,
@@ -63,6 +63,11 @@ const manejarSubmit = async(e) =>{
         e.preventDefault();
         console.log(e.target.files[0]);
         imagen = e.target.files[0];
+
+        
+        imageUrl = URL.createObjectURL(imagen)
+        SetValueotro (imageUrl)  //cogiendo el estado de lvalue y spred operatr  
+                
     };
 
     
@@ -91,7 +96,7 @@ const manejarSubmit = async(e) =>{
             {loading === true ? (
                 <Cargando />
             ) : (
-                <FormProducto value = {value} actualizarInput = {actualizarInput} manejarSubmit = {manejarSubmit}  manejarImagen = {manejarImagen} categorias ={categorias} />                       
+                <FormProducto value = {value} actualizarInput = {actualizarInput} manejarSubmit = {manejarSubmit}  manejarImagen = {manejarImagen} categorias ={categorias} valueotro ={valueotro} />                       
             )}          
         </>
     );

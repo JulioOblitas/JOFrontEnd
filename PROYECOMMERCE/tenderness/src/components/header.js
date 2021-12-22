@@ -15,22 +15,11 @@ import { CarritoContext } from "../context/carritoContext";
 import { Link, useNavigate } from "react-router-dom";
 import Badge from "@mui/material/Badge";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
-
-
-
-
-
-import CheckOutView from  "../views/ChekOutView"
-import PrivateRoute from  "../components/PrivateRoute"
-import CrearProductosView from "../views/CrearProductosView";
-
 import { obtenerCategorias } from "../services/categoriasServices";
 import { obtenerProductos , ObtenerProductosPorPagina  } from "../services/productosServices";
-import Main from "../components/main";
-import { style } from "@mui/system";
-
-
+import Main from "./Main";
+import Modal from "../components/Modal";
+import useModal from "../hooks/useModal";
 
 export default function Header() {
 
@@ -45,14 +34,15 @@ export default function Header() {
     const [categoriasOriginal, setCategoriasOriginal] = useState([]); //nunca lo modifico
     const [productos, setProductos] = useState([]);
     const [productosOriginal,  setProductosOriginal] = useState([]); //nunca lo modifico
-    
+
+    const [isOpenModal,openModal, closeModal] = useModal();
+
     
     
 
  
     
     
-
 
     const totalCarrito = carrito.reduce((total, prod) => {
         return total + prod.cantidad;
@@ -118,8 +108,15 @@ export default function Header() {
 
     return (
        <>    
+        
         <header>
-         <div className = "contenedorheader" >
+
+        
+         <div className = "contenedorredessociales" >
+             <button onClick={openModal}>
+                Abrir Modal
+             </button>
+                <Modal isOpen={isOpenModal} closeModal = {closeModal} title ={`PUBLICIDAD`}  />
          
             <div className = "Email">
                 <img  className = "imglogocabecera"  src= {imgEmail}  alt=""/>
@@ -130,8 +127,7 @@ export default function Header() {
               
                 <img  className = "imglogocabecera"  src= {imgTelefono}  alt=""/>
                 <h6 className = "h6Email">934586160</h6>
-            
-                
+                            
                 
             </div>
         
@@ -141,9 +137,9 @@ export default function Header() {
                 <img  className = "imglogocabecera"  src= {imgInstagram}  alt=""/>
             </div>
       
-            </div>
+        </div>
 
-            <div className= "contenedor2" >
+            <div className= "contenedorbusqueda" >
                 <div className = "Logo">
                     <img   className = "imglogoempresa imglogoefecto"  src= {imgLogoEmpresa}  alt=""/>                        
                 </div>
@@ -152,23 +148,15 @@ export default function Header() {
                     <input className = "txtbuscar" value = {buscar}   onChange={e => setBuscar(e.target.value)}  type="text" placeholder = "Tenderness siempre contigo.. buscalo" />
                    
                    <a href = "#"> <img  className = "imgbuscar"  onClick={() => { BuscarPorCategoria()}} src= {imgLogoBuscar}  alt=""/>  </a>
+                   
                    <Link className="nav-link" to="/carrito">
                             {/*<Badge badgeContent={totalCarrito} color="primary">*/}
                             <Badge   badgeContent={totalCarrito} color="primary">
                                 <ShoppingCartIcon />
                             </Badge>
                         </Link>
-
-                   
-                   {/*<a href = "#"> <img  className = "imgbuscar"   onClick={() => { filtrarPorCategoria(cat.id);}} src= {imgLogoBuscar}  alt=""/>  </a>*/}
-                   
-                   {/* <button className = "btnacceso" onClick={signIn} >ACCESO</button>**/}
-                    
-                   {/* <Link to ="/crearProducto" className = "btn btn-primary btnacceso"   >
-                        ACCESO
-                    </Link>*/}
-
                 </div>
+                
                 <div  className="divusuario">
 
                      {user ? (
@@ -189,13 +177,11 @@ export default function Header() {
                        >
                            
                                
-                                <Link  to = "/operaciones" className = "btn btn-primary btnoperacion">
-                                  
-                                        OPERACIONES    
-                                    </Link> 
-                                
-                                
-                                <NavDropdown.Item   className = "btn btn-primary btnoperacion" onClick = {signOut} >SALIR</NavDropdown.Item>
+                     
+
+                                <NavDropdown.Item as={Link} to="/operaciones"  className = "btn btn-primary btnoperacionusuario" > OPERACIONES</NavDropdown.Item>
+
+                                <NavDropdown.Item   className = "btn btn-primary btnoperacionusuario" onClick = {signOut} >SALIR</NavDropdown.Item>
                              
                             </NavDropdown>
                         ) : (
@@ -205,29 +191,45 @@ export default function Header() {
                         )}
                 
                 
+        
+      
                 </div>
             </div>
-          
+         
+         
+      
+        
             
 
-        </header>
-        <Navbar bg="primary" variant="dark">
-    <Container>
+  
+        
+        <Navbar className= "posnavbar" bg="primary" variant="dark">
+    <Container className= "posnavbar">
     
     <Navbar.Brand href="/#home" onClick= {() =>{  setProductos(productosOriginal)}}>   INICIO</Navbar.Brand>
     <Navbar.Brand href="#home" onClick= {() =>{  setProductos(productosOriginal)}}>   TODOS</Navbar.Brand>
       <Nav className="me-auto">
-      <Nav.Link href="#polos"  onClick ={() => BuscarPorCategoriaNavBar(1)}>POLOS</Nav.Link>
-      <Nav.Link href="#vestidos" onClick ={() => BuscarPorCategoriaNavBar(2)}>VESTIDOS</Nav.Link>
-      <Nav.Link href="#leggins" onClick ={() => BuscarPorCategoriaNavBar(3)}>LEGGINS</Nav.Link>
-      <Nav.Link href="#blusas" onClick ={() => BuscarPorCategoriaNavBar(4)}>BLUSAS</Nav.Link>
-      <Nav.Link href="#lenceria"onClick ={() => BuscarPorCategoriaNavBar(5)}>LENCERIAS</Nav.Link>
-      <Nav.Link href="#jeans"onClick ={() => BuscarPorCategoriaNavBar(6)}>JEANS</Nav.Link>
+      
+
+                        
+                
+                      
+                             {categoriasOriginal.map((cat, i) => (
+                                <Nav.Link key={i} onClick={() => {BuscarPorCategoriaNavBar(cat.id);}}>                                
+                                {cat.nombre}
+                                </Nav.Link>
+                            
+                            ))}
+                      
+            
+      
+     
     </Nav>
     </Container>
   </Navbar>
- 
-            
+       
+  </header>
+   
              {   <Routes>
                 
                           <Route  path = "/" element = { <Main  miprop={productos}  />} />

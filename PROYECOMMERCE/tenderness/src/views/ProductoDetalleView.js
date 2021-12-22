@@ -43,7 +43,7 @@ export default function ProductoDetalleView() {
     };
 
     const anadirACarritoContext = () => {
-        const { id, nombre, precio } = producto;
+        const { id, descripcion, precio } = producto;
         /**   {   id: producto.id,
 			 nombre: producto.nombre,
 			precio: producto.precio,
@@ -51,7 +51,7 @@ export default function ProductoDetalleView() {
 			}; */
         const nuevoProducto = {
             id,
-            nombre,
+            descripcion,
             precio,
             cantidad,
         };
@@ -70,6 +70,8 @@ export default function ProductoDetalleView() {
 
     return (
         <>
+         <div className = "contenedor">
+               <div className = "principalcategorias">
 
             <div
               className="title-product py-5 mb-5"
@@ -135,7 +137,7 @@ export default function ProductoDetalleView() {
                                             modificarCantidad(1);
                                         }}
                                     >
-                                        <i className="fas fa-plus"></i>
+                                        <i className="fas fa-plus-square"></i>
                                     </button>
                                     <button className="btn btn-outline-primary ms-3" onClick={anadirACarritoContext}>
                                         <i className="fas fa-cart-plus"></i> Añadir a carrito
@@ -148,6 +150,8 @@ export default function ProductoDetalleView() {
                         </>
                     ) : null}
                 </div>
+            </div>
+            </div>
             </div>
         </>
     );

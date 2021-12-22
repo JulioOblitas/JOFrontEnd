@@ -59,6 +59,7 @@ export default function ProductoConFiltrosView() {
         <>
             <div className="container">
                 <div className="d-flex justify-content-around my-3 px-5">
+                    
                     <button
                         className="btn btn-outline-dark btn-sm"
                         onClick={() => {
@@ -66,7 +67,8 @@ export default function ProductoConFiltrosView() {
                         }}
                     >
                         Todas las categorías
-                    </button>
+                       
+                         </button>
                         
                          {categorias.map((cat, i) => (
                             <button className="btn btn-outline-dark btn-sm"
@@ -78,7 +80,8 @@ export default function ProductoConFiltrosView() {
 
                                 
                             {cat.nombre}
-                     </button>
+                        </button>
+                        
                         ))}
                 </div>
                 
